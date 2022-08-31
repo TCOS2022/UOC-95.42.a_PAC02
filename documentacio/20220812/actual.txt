@@ -1,0 +1,49 @@
+PAGINA COMBAT.HTML
+
+ENUNCIAT
+Pàgina combat (combat.html)
+La pàgina de combat, al carregar-se ha de fer una consulta i retornar 10 Pokemons aleatoris. Aquests s'han de
+mostrar en format targeta com a l'apartat anterior, però inicialment tota la informació ha d'estar oculta. Les
+targetes han d'estar “girades” com si fóssin cartes boca avall i només es mostra la part posterior de la targeta.
+Per tant, inicialment l'usuari només veurà 10 targetes totes igual.
+L'usuari haurà de seleccionar dos targetes fent clic sobre les que vulgui. Les targetes selecciones hauran mostrar
+la informació de la targeta: nom, imatge, atac i defensa.
+Un cop seleccionades les dues cartes, aquestes entren en combat seguint la següent lògica:
+- La primera carta seleccionada és la carta atacant. S'utilitzarà el seu valor “atac”.
+- La segona carta seleccionada és la carta que defensa. S'utilitzarà el seu valor “defensa”.
+- Si el valor d'atac de la primera carta és superior al valor de defensa de la segona, la primera carta guanya
+el combat. S'ha de mostrar un missatge “{nom del Pokemon de la primera carta} ataca i guanya a {nom del
+Pokemon de la segona carta}”.
+- Si, en canvi, el valor d'atac de la primera carta és igual o inferior al valor de defensa de la segona carta, guanya
+la segona carta. El missatge ha de ser: “{nom del Pokemon de la primera carta} ataca i perd contra {nom de
+Pokemon de la segona carta}”.
+
+SOLVING:
+
+Crearem una pagina copiant de llistat.html, i afegirem 3 sections:
+        <main>
+            <section class="loading">
+                <div>
+                    <img src="media/imatges/animacions/loading_v2.gif" alt="esperant que carreguin les dades des de la API" srcset="">
+                    <h3>Loading data from API .... please wait!!!</h3>
+                </div>
+            </section>
+
+            <section class="combat_llistat">
+                <p>Aqui van les 10 cartes</p>
+            </section>
+
+            <section class="combat_resultat">
+                <p>Aqui va el resultat del combat</p>
+            </section>
+        </main>
+
+Configurarem el CSS per defecte igual que a la pagina llistat.css, deixant sols la section loading visible per defecte
+
+Em afegit algunes comprovacion de quines cartes estaven activades per resetejar el aspecte a la funcio de voltejar
+
+PENDENT:
+
+Ara per ara, sols queda per canviar el tema dels estils per les cartes activades/hover.
+
+NOTA: El codi ha quedat una mica caotic pq he tingut que afegir alguns checks pq si no no va be, per exemple que quant tinguis mes de 2 cartes "actives" esborri les actives i la part de la solucio

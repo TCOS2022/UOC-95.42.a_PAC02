@@ -1,0 +1,36 @@
+Mirar part del buscador
+
+
+ENUNCIAT
+Filtre de cerca
+La pàgina inicial també ha de tenir un filtre textual de Pokemons. Ha de ser un input de tipus "search" en el que,
+a mesura que es van escrivint lletres, només s'han de mostrar aquells Pokemon que el seu nom contingui el text
+escrit. Aquesta comprovació s'ha de fer per cada lletra que s'escrigui al filtre (event input).
+Per exemple, si tenim les cartes: Charmander, Bulbasaur, Charizard i Blastoise, si s'escriu al filtre “cha”, només
+han de ser visibles les cartes Charmander i Charizard.
+
+SOLVING ...
+Aixi de entrada, afegirem un section amb class "buscador" 
+
+Una coseta qeue s podria optimitzar es qeu en comptes de anar section a section apagant i encenent, ho fem segons
+una variable .... potser ho implementarem mes endevant
+
+La feina ha sigut:
+    1) obtenir els noms del pokemons, ja que no es pot reconsultar la api pq el arrayRND ENCARA no estava guardat
+     al localStorage aixi que em optat per recuperar-los del propi codi HTML
+
+    2) comparar la cadena de busqueda amb els noms del pokemons i especificar els casos en qeu podia explotar
+
+Per encendre o apagar els elements de la llista podem afegir la propietat css display:none a tots, i despres
+display.block sols als seleccionats.
+
+    elementos = document.querySelectorAll(.cards)
+    elementos.styles.display = none
+
+NOTA: Tambe s pot fer afegint un clase que tingui el display .... o be amb un toggle de la clase que faci el 
+canvi entre block/none
+
+Un problema que ens ha costat entendre era pq si no sortim del bucle d comprovacio alguns valors que eren TRUE
+acaben sent FALSE, el qeu pasa es que si PRIMER es TRUE .... en la resta de casos sera SEMPRE FALSE i per tant
+acaba sent false, aixi qeu fem un break del bucle un cop em trobat una coincidencia
+

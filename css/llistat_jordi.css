@@ -1,0 +1,60 @@
+
+
+
+
+/* BASIC RESET */
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+/* DEVELOPPING */
+header,main,footer{border:green solid 2px}
+section {border: red 2px dotted}
+
+/* ASIGNACIO DELS COLORS SEGONS EL TEMA */
+body {
+    background-color: var(--bg_color);
+    color: var(--font_color);
+}
+
+
+/* AREA DE NAVEGACIO */
+header ul {
+    list-style: none;
+}
+
+header ul li {display: inline-block;}
+header ul li.li_theme ul li{
+    border:1px black solid;
+    padding: 5px;
+    background-color: darkgray;
+}
+header ul li.li_theme ul li.theme_selected {
+    background-color: blueviolet !important; 
+    color:yellow !important;
+    font-size: 125% rem !important;
+    font-weight: bolder;
+}
+header ul li.li_theme ul li:hover   {background-color: orange;}
+
+/* AREA DE LOADING */
+section.loading{
+    display:block
+}
+
+/* AREA DE BUSCADOR */
+section.buscador{
+    display:block
+}
+
+/* AREA DE LLISTAT */
+section.llistat{
+    display:none
+}
+
+/* AREA DE DETALL */
+section.detall{
+    display:none
+}

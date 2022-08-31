@@ -1,0 +1,15 @@
+/* ***************************************** */
+/* Arxiu CSS que es configura pel tema LIGHT */
+/* ***************************************** */
+
+:root{
+    --bg_color: rgb(250,250,250);
+    --font_color: rgb( 10,10,10);
+    --font-type: arial;
+}
+
+body {
+    background-color: var(--bg_color);
+    color:            var(--font_color);
+}
+

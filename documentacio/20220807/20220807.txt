@@ -1,0 +1,19 @@
+Em afegit unes cosetes:
+
+Funcions de gestio de localStorage, al final com la de UPDATE ho fa tot, no cal tantes Funcions
+Recorderm que em de guardar STRINGS al localhost, aixi qeu si tenim un array o un objecte l em de convertir PRIMER
+
+La pagina llistat mira si tenim, per una banda, un valor pokeID a la url i tambe si tenim alguna cosa al localStorage
+Si tenim pokeID, ens mostrara SOLS les dades ampliades de aqeuata pokeID
+Si tenim localStorage, llavors recuperarem el array de ids que conformaven una llistat
+
+Em afegit una linia nova que conte un boto per anar al poke detallat, abans era simplement fent un clic a sobre de qulasevol part 
+
+Em afegit un boto que envia de nou al llistat, tampoc calia ja que tenim la barra de navegacio, pero vale.
+
+Coses a controlar qeu no estan incloses:
+    Validacio de localStorage Activat
+    Validacio de dades
+        controlar qeu realment tenim SOLS un pokeID o un arrayRND
+    Validacio de errors
+        controlar qeu la api ens retorna dades o errors

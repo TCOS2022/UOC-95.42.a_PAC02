@@ -1,0 +1,31 @@
+Em afegit la funcionalitat del selector de temas
+Em afegit una font nova a la carpeta media/fonts pel tema INFERNO
+
+pq funcioni, tenim 4 links de CSS:
+    <!-- Afegim arxius de CSS -->
+        <!-- Per triar els color del thema .... -->
+            <link rel="stylesheet" href="css/general_system.css" id="css_Theme" >
+        <!-- valors generals per tota la web -->
+            <link rel="stylesheet" href="css/general.css">
+        <!-- valors especifics per aquesta pagina -->
+            <link rel="stylesheet" href="css/llistat.css">
+
+Es carrega per defecte el general_system, despres desde JS el canviem segons tinguem
+guardat al localStorage o triem al menu , i sols hauriem de guardar aqui el qeu realment 
+canvia, allo que no ha de estar al general.css si afecta a tota la web o al llistat.css  
+si sols afecta a la pagina llistat.html
+
+Sols controla, de moment, el color de fons i el color del text, cal afegir tota la resta
+
+Cosetes qeu cal mirar/repasar: 
+
+que realment elimini el tag de class i no sols la clase pq queda un tag
+suelto al codi html tal com es mostra a 20220808_01.png, pero potser es pq esta afegit
+desde el html i els altres desde JS.
+
+que es quedi marcada la opcio del selector amb color taronga (imatge 03b), i no com es
+veu a la 05, tot i que es posible que sigui per l ordre de execucio ....
+
+afegir el hover al menu de tema pq es mostri el efecte ABANS de fer-li click
+
+

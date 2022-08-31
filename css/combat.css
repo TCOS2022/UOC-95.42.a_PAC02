@@ -1,0 +1,154 @@
+/* ****************************************************************** */
+/* BASIC RESET */
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+/* ****************************************************************** */
+/* DEVELOPPING */
+header,main,footer{border:green solid 2px}
+section {border: red 2px dotted}
+
+/* ****************************************************************** */
+/* ASIGNACIO DELS COLORS SEGONS EL TEMA */
+body {
+    background-color: var(--bg_color);
+    color: var(--font_color);
+}
+
+/* ****************************************************************** */
+/* AREA DE NAVEGACIO */
+header ul {
+    list-style: none;
+}
+
+header ul li {display: inline-block;}
+header ul li.li_theme ul li{
+    border:1px black solid;
+    padding: 5px;
+    background-color: darkgray;
+    color:darkgreen
+}
+header ul li.li_theme ul li.theme_selected {
+    background-color: blueviolet !important; 
+    color:yellow !important;
+    font-size: 1.25 rem !important;
+    font-weight: bolder;
+}
+header ul li.li_theme ul li:hover   {background-color: orange;}
+
+/* ****************************************************************** */
+/* AREA DE LOADING */
+section.loading{
+    display:block
+}
+
+/* ****************************************************************** */
+/* AREA DE LLISTAT */
+/* NEW VALUES !!!!! 
+    section.combat_llistat {}
+    section.combat_llistat div.cardContainer {}
+    section.combat_llistat div.cardContainer article.card {}
+    section.combat_llistat div.cardContainer article.card:hover {}
+    section.combat_llistat div.cardContainer article.card.activada {}
+    section.combat_llistat div.cardContainer article.card div.card-tapa {}
+    section.combat_llistat div.cardContainer article.card div.card-tapa img {}
+    section.combat_llistat div.cardContainer article.card div.card-dades {}
+    section.combat_llistat div.cardContainer article.card div.card-dades card_dades_imatge {}
+    section.combat_llistat div.cardContainer article.card div.card-dades card_dades_imatge img {}
+    section.combat_llistat div.cardContainer article.card div.card-dades card_dades_dades {}
+    section.combat_llistat div.cardContainer article.card div.card-dades card_dades_dades span {}
+*/
+
+section.combat_llistat div.cardContainer{
+    /* Afegim valor de perspectiva 3D al contenidor de la carta */
+    -webkit-perspective:1200;
+    -moz-perspective:1200;
+    perspective: 1200;
+    display:flex;
+}
+
+section.combat_llistat div.cardContainer article.card {
+    position:relative;
+    /* Afegim la gestio heredada dels efectes 3D */
+    -moz-transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;
+    transform-style: preserve-3d;
+    /* Definim com volem que siguin les transcicions aplicades */
+    transition: all 5s ease;
+    /* Li posem un border pq ajusti be quant sigui activada */
+    border: green 5px solid;
+    border-radius: 25px;
+}
+
+section.combat_llistat div.cardContainer article.card:hover {
+    /* Afegim el efecte de rotacio de la carta (amb les dues imatges: frontal i posterior) quant fem hover */
+    -webkit-transform:rotateY(179.9deg);
+    -moz-transform:rotateY(179.9deg);
+    transform: rotateY(179.9deg);
+    border: yellow 5px solid;
+    border-radius: 25px;
+}
+
+section.combat_llistat div.cardContainer article.card.activada {
+    /* Afegim el efecte de rotacio de la carta (amb les dues imatges: frontal i posterior) quant fem click */
+    -webkit-transform:rotateY(179.9deg);
+    -moz-transform:rotateY(179.9deg);
+    transform: rotateY(179.9deg);
+    border: 5px red solid;
+    border-radius: 25px;
+}
+
+.card_tapa, .card_dades{
+    /* Afegim atributs comuns a les dues cares */
+    /* Ens asegurem de qeu omplin els divs ... */
+    height: 100%;
+    width: 100%;
+    position: relative;
+    /* Posem la cara del darrera del div oculta */
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* Asegurem que es mantinguin les propietats 3D heredades */
+    -moz-transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.card_dades{
+    position:absolute;
+    top:0;
+    left:0;
+    /* Girem la part que no volem que es vegui de inici ..... */
+    -webkit-transform:rotateY(179.9deg);
+    -moz-transform:rotateY(179.9deg);
+    transform: rotateY(179.9deg);
+}
+
+.card_dades_imatge img {width: 49%}
+
+.card_dades_dades {text-align: center;}
+
+.card_dades_dades span {
+    /* A efectes de developping .... */
+    background-color: blue;color: chartreuse;
+}
+
+/* ****************************************************************** */
+/* AREA DE RESULTATS */
+section.combat_resultat{
+    display:none
+}
+
+section.combat_resultat #resultatCombat {
+    color:orange;
+    background-color: blueviolet;
+    font-size:25px;
+    font-weight: bolder;
+    font-style: italic;
+    display:block;
+    padding:25px;
+    text-align: center;
+}
