@@ -67,7 +67,7 @@ section.combat_llistat div.cardContainer{
     -webkit-perspective:1200;
     -moz-perspective:1200;
     perspective: 1200;
-    display:flex;
+    display: flex;
 }
 
 section.combat_llistat div.cardContainer article.card {
@@ -79,8 +79,8 @@ section.combat_llistat div.cardContainer article.card {
     /* Definim com volem que siguin les transcicions aplicades */
     transition: all 5s ease;
     /* Li posem un border pq ajusti be quant sigui activada */
-    border: green 5px solid;
-    border-radius: 25px;
+    border: rgb(144, 198, 144) 1px solid;
+    border-radius: 5px;
 }
 
 section.combat_llistat div.cardContainer article.card:hover {
