@@ -112,6 +112,8 @@ section.loading{
     border-radius: 20px;
 }
 
+.poke_nom {text-transform: capitalize;}
+
 /* AREA DE DETALL */
 section.detall{
     display:none
