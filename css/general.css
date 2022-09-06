@@ -1,0 +1,35 @@
+/* ****************************************************************** */
+/* BASIC RESET */
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+/* ****************************************************************** */
+/* ASIGNACIO DELS COLORS SEGONS EL TEMA */
+body {
+    background-color: var(--bg_color);
+    color: var(--font_color);
+}
+
+/* ****************************************************************** */
+/* AREA DE NAVEGACIO */
+header ul {
+    list-style: none;
+}
+
+header ul li {display: inline-block;}
+header ul li.li_theme ul li{
+    border:1px black solid;
+    padding: 5px;
+    background-color: darkgray;
+    color:darkgreen
+}
+header ul li.li_theme ul li.theme_selected {
+    background-color: blueviolet !important; 
+    color:yellow !important;
+    font-size: 1.25 rem !important;
+    font-weight: bolder;
+}
+header ul li.li_theme ul li:hover   {background-color: orange;}

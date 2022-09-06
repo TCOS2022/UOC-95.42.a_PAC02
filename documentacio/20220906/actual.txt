@@ -1,0 +1,54 @@
+Procedirem a complicar el codi html del diseny de la card per poder treballar en el diseny i afegir cosetes amb CSS ...
+NOTA: Recordar que tot el codi de els cartes es genera via JS
+
+fem copia i movem a la carpeta de documentacio 20220906:
+    llistat.js  --> llistat_old.js
+    llistat.css --> llistat_old.css (que es el codi que va fer la Irene)
+    combat.js   --> combat_old.js
+    combat.css  --> combat_old.css
+
+
+***************
+*** LLISTAT ***
+***************
+CODI ANTIC LLISTAT.JS
+    // Recrearem la estructura HTML linia a linia ...
+    // NOTA: Afegim la linia 08a!!!!
+    linia01    = '<article class="card">'
+    linia02    = `     <img src="${poke_img}" alt="imatge del pokemon presentat" class="poke_img">`
+    linia03    = '     <div class="dades">'        
+    linia04    = `           ID:  <span class="poke_id">  ${poke_id}  </span></br>`        
+    linia05    = `           NOM: <span class="poke_nom"> ${poke_nom} </span></br>`        
+    linia06    = `           ATK: <span class="poke_atk"> ${poke_atk} </span></br>`       
+    linia07    = `           DEF: <span class="poke_def"> ${poke_def} </span>`
+    linia08    = '      </div>'
+    // ****************************************** 
+    // ******************************************
+    linia08a   = `      <a href="llistat.html?pokeID=${poke_id}" class="poke_btnDetalls">VEURE MES DETALLS</a>`
+    // ******************************************
+    // ******************************************
+    linia09    = '</article>'
+            
+    // Ho afegim tot a un array ....
+    pokecards.push(linia01 + linia02 + linia03 + linia04 + linia05 + linia06 + linia07 + linia08 + linia08a + linia09)
+    }
+
+
+CODI MODIFICAT LLISTAT.JS
+
+Modificacions a combat.js per adequar clases i ancles a la nova estructura:
+
+combat_cardVoltejar(idvalue)
+    linia 16 -> .card a .pokeCard
+    let cartes = document.querySelectorAll("section.combat_llistat article.pokeCard")
+
+combat_combat(id_defensor,arrayPokemons)
+    linia 72 -> .card a .pokeCard
+    cartes_visibles = document.querySelectorAll("section.combat_llistat .pokeCard.activada")
+
+combat_initialize()
+    linia 345 -> .card a .pokeCard
+    let ancla1 = document.querySelectorAll("section.combat_llistat article.pokeCard")
+
+    linai 366 -> .card a .pokeCard
+    console.log("Cartes actives actualment: ",document.querySelectorAll("section.combat_llistat .pokeCard.activada").length)
