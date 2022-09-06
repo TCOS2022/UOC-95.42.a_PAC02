@@ -1,7 +1,9 @@
 /* ****************************************************************** */
 /* DEVELOPPING */
+/*
 header,main,footer{border:green solid 2px}
 section {border: red 2px dotted}
+*/
 
 /* ****************************************************************** */
 /* AREA DE LOADING */
@@ -9,18 +11,20 @@ section.loading{
     display:block
 }
 
-/* ****************************************************************** */
+/* ********************************************************************* */
 /* AREA DE LLISTAT DE CARTES */
-
-section.combat_llistat div.pokeContainer{
+/* ********* VERSIO JORDI. PROVA DE CONCEPTE 20220906 - INICI - ******** */
+.combat_llistat .pokeContainer{
     /* Afegim valor de perspectiva 3D al contenidor de la carta */
-    -webkit-perspective:1200;
-    -moz-perspective:1200;
-    perspective: 1200;
+    -webkit-perspective:800;
+    -moz-perspective:800;
+    perspective: 800;
     display:flex;
+    width: 250px;
+    margin: 10px
 }
 
-section.combat_llistat div.pokeContainer article.pokeCard {
+.combat_llistat .pokeContainer .pokeCard{
     position:relative;
     /* Afegim la gestio heredada dels efectes 3D */
     -moz-transform-style:preserve-3d;
@@ -31,31 +35,30 @@ section.combat_llistat div.pokeContainer article.pokeCard {
     /* Li posem un border pq ajusti be quant sigui activada */
     border: green 5px solid;
     border-radius: 25px;
+    position:relative; 
+    width: 100%;
 }
 
-section.combat_llistat div.pokeContainer article.pokeCard:hover {
+.combat_llistat .pokeContainer .pokeCard:hover {
     /* Afegim el efecte de rotacio de la carta (amb les dues imatges: frontal i posterior) quant fem hover */
-    -webkit-transform:rotateY(179.9deg);
-    -moz-transform:rotateY(179.9deg);
-    transform: rotateY(179.9deg);
+    -webkit-transform:rotateY(180deg);
+    -moz-transform:rotateY(180deg);
+    transform: rotateY(180deg);
     border: yellow 5px solid;
     border-radius: 25px;
 }
 
-section.combat_llistat div.pokeContainer article.pokeCard.activada {
+.combat_llistat .pokeContainer .pokeCard.activada {
     /* Afegim el efecte de rotacio de la carta (amb les dues imatges: frontal i posterior) quant fem click */
-    -webkit-transform:rotateY(179.9deg);
-    -moz-transform:rotateY(179.9deg);
-    transform: rotateY(179.9deg);
+    -webkit-transform:rotateY(180deg);
+    -moz-transform:rotateY(180deg);
+    transform: rotateY(180deg);
     border: red 5px solid;
     border-radius: 25px;
 }
 
-.combat_llistat .poke_tapa, .combat_llistat .poke_contingut{
+.combat_llistat .pokeContainer .poke_tapa, .combat_llistat .pokeContainer .poke_contingut{
     /* Afegim atributs comuns a les dues cares */
-    /* Ens asegurem de qeu omplin els divs ... */
-    height: 100%;
-    width: 100%;
     position: relative;
     /* Posem la cara del darrera del div oculta */
     -moz-backface-visibility: hidden;
@@ -67,20 +70,35 @@ section.combat_llistat div.pokeContainer article.pokeCard.activada {
     transform-style: preserve-3d;
 }
 
-.combat_llistat .poke_tapa img {width: max-content;}
-
-.combat_llistat .poke_contingut{
-    position:absolute;
-    top:0;
-    left:0;
-    /* Girem la part que no volem que es vegui de inici ..... */
-    -webkit-transform:rotateY(179.9deg);
-    -moz-transform:rotateY(179.9deg);
-    transform: rotateY(179.9deg);
+.combat_llistat .pokeContainer .pokeCard .poke_tapa{position:relative; width: 100%;}
+.combat_llistat .pokeContainer .pokeCard .poke_tapa img{
+    position:relative;
+    width: 240px;
+    height: 420px;
 }
 
+.combat_llistat .pokeContainer .poke_contingut{
+    position:absolute;
+    top:0;
+    right:20px;
+
+    /* Girem la part que no volem que es vegui de inici ..... */
+    -webkit-transform:rotateY(180deg);
+    -moz-transform:rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+
+/*
+.poke_tapa{display:none}
+.poke_contingut{display: block;}
+*/
+
+.poke_tapa{display:block}
+.poke_contingut{display: block;}
+
 /* ********* VERSIO JORDI. PROVA DE CONCEPTE 20220906 - FINAL - ******** */
-/* ****************************************************************** */
+/* ********************************************************************* */
 
 /* AREA DE RESULTATS */
 section.combat_resultat{

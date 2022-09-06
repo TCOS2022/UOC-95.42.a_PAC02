@@ -247,7 +247,6 @@ async function llistat_configuracioURLSenseParametres(){
         let poke_atk   = array_pokemons[x].stats[1].base_stat
         let poke_def   = array_pokemons[x].stats[2].base_stat
 
-        /*
         // Recrearem la estructura HTML linia a linia ...
         linia01    = '<article class="card">'
         linia02    = `     <img src="${poke_img}" alt="imatge del pokemon presentat" class="poke_img">`
@@ -266,99 +265,6 @@ async function llistat_configuracioURLSenseParametres(){
 
         // Ho afegim tot a un array ....
         pokecards.push(linia01 + linia02 + linia03 + linia04 + linia05 + linia06 + linia07 + linia08 + linia08a + linia09)
-        */
-
-        /* ******************* MODIFICACIO ESTRUCTURA DE LA CARD PER ADAPTAR A CANVIS DESDE 20220906 ***************** */
-        linia = ""
-        linies = ""
-        // Fem les linies del codi nou de HTML ....
-        linia  = '<div classs="pokeContainer">'
-        linies = linies + linia
-
-        linia  = '  <article class="pokeCard">'
-        linies = linies + linia
-
-        /*
-        linia  = '      <div class="poke_tapa">'
-        linies = linies + linia
-        linia  = '      </div>'
-        linies = linies + linia
-        */
-
-        linia  = '      <div class="poke_contingut">'
-        linies = linies + linia
-        linia  = `          <div class="pokeImg">`
-        linies = linies + linia
-        linia  = `              <div class="pID">`
-        linies = linies + linia
-        linia  = `                  <span class="pokeId0">ID</span>`
-        linies = linies + linia
-        linia  = `                  <span class="pokeId1">${poke_id} </span>`
-        linies = linies + linia
-        linia  = `              </div>`
-        linies = linies + linia
-        linia  = `              <div class="pImg">`
-        linies = linies + linia
-        linia  = `                  <img src="${poke_img}" alt="">`
-        linies = linies + linia
-        linia  = `              </div>`
-        linies = linies + linia
-        linia  = `              <div class="pName">`
-        linies = linies + linia
-        linia  = `                  <span class="pokeName0">NOM:</span>`
-        linies = linies + linia
-        linia  = `                  <span class="pokeName1">${poke_nom}</span>`
-        linies = linies + linia
-        linia  = `              </div>`
-        linies = linies + linia
-        linia  = `          </div>`
-        linies = linies + linia
-        linia  = `          <div class="pokeData">`
-        linies = linies + linia
-        linia  = `              <div class="pAtk">`
-        linies = linies + linia
-        linia  = `                  <span class="pokeAtk0">Atac</span><br>`
-        linies = linies + linia
-        linia  = `                  <span class="pokeAtk1">[${poke_atk}]</span>`
-        linies = linies + linia
-        linia  = `              </div>`
-        linies = linies + linia
-        
-        linia  = `              <!--`
-        linia  = `              <div class="pCuadrat"></div>`
-        linia  = `              -->`
-        
-        linia  = `              <div class="pDef">`
-        linies = linies + linia
-        linia  = `                  <span class="pokeDef0">Defensa</span><br>`
-        linies = linies + linia
-        linia  = `                  <span class="pokeDef1">[${poke_def}]</span>`
-        linies = linies + linia
-        linia  = `              </div>`
-        linies = linies + linia
-        linia  = `          </div>`
-        linies = linies + linia
-        linia  = `          <div class="pokeBtn">`
-        linies = linies + linia
-        linia  = `              <div class="pBtn">`
-        linies = linies + linia
-        linia  = `                  <span class="pokeBtn0"><a href="llistat.html?pokeID=${poke_id}">MES DADES</a></span>`
-        linies = linies + linia
-        linia  = `              </div>`
-        linies = linies + linia
-        linia  = `          </div>`
-        linies = linies + linia
-        linia  = `      </div>` // /div .poke_contingut
-        linies = linies + linia
-        linia  = `  </article>`
-        linies = linies + linia
-        linia  = `</div>` // /div .pokeContainer
-        linies = linies + linia
-        
-        //  i les afegim al array de articles ....
-        pokecards.push(linies)
-        /* ************************************************************************************************************ */
-
     }
 
     // Afegim el codi HTML creat a la pagina web ....
@@ -473,9 +379,7 @@ async function llistat_configuracioURLAmbParametres(){
 
     // Obtenim les dades dels types per poder-los afegir ...
     let num_typs = poke_typ.length
-    let pokecards=[]
 
-    /*
     // Recrearem la estructura HTML linia a linia ...
     linia01    = '<article class="card">'
     linia02    = `     <img src="${poke_img1}" alt="imatge del pokemon presentat" class="poke_img">`
@@ -501,100 +405,6 @@ async function llistat_configuracioURLAmbParametres(){
     // Ho posem tot en una sola variable ....
     let codiHTML = ""
     codiHTML = linia01+linia02+linia03+linia04+linia05+linia06+linia07+linia08+linia09+linia10+linia11+linia12
-    */
-
-    /* ******************* MODIFICACIO ESTRUCTURA DE LA CARD PER ADAPTAR A CANVIS DESDE 20220906 ***************** */
-    linia = ""
-    linies = ""
-    // Fem les linies del codi nou de HTML ....
-    linia  = '<article class="pokeCard">'
-    linies = linies + linia
-    linia  = `  <div class="pokeImg">`
-    linies = linies + linia
-    linia  = `    <div class="pID">`
-    linies = linies + linia
-    linia  = `        <span class="pokeId0">ID</span>`
-    linies = linies + linia
-    linia  = `        <span class="pokeId1">${poke_id} </span>`
-    linies = linies + linia
-    linia  = `    </div>`
-    linies = linies + linia
-    linia  = `    <div class="pImg">`
-    linies = linies + linia
-    linia  = `        <img class="parella" src="${poke_img1}" alt="">`
-    linies = linies + linia
-    linia  = `        <img class="parella" src="${poke_img2}" alt="">`
-    linies = linies + linia
-    linia  = `    </div>`
-    linies = linies + linia
-    linia  = `    <div class="pName">`
-    linies = linies + linia
-    linia  = `        <span class="pokeName0">NOM:</span>`
-    linies = linies + linia
-    linia  = `        <span class="pokeName1">${poke_nom}</span>`
-    linies = linies + linia
-    linia  = `    </div>`
-    linies = linies + linia
-    linia  = `  </div>`
-    linies = linies + linia
-    linia  = `  <div class="pokeData">`
-    linies = linies + linia
-    linia  = `    <div class="pAtk">`
-    linies = linies + linia
-    linia  = `        <span class="pokeAtk0">Atac</span><br>`
-    linies = linies + linia
-    linia  = `        <span class="pokeAtk1">[${poke_atk}]</span>`
-    linies = linies + linia
-    linia  = `    </div>`
-    linies = linies + linia
-
-    linia  = `    <!--`
-    linia  = `    <div class="pCuadrat"></div>`
-    linia  = `    -->`
-
-    linia  = `    <div class="pDef">`
-    linies = linies + linia
-    linia  = `        <span class="pokeDef0">Defensa</span><br>`
-    linies = linies + linia
-    linia  = `        <span class="pokeDef1">[${poke_def}]</span>`
-    linies = linies + linia
-    linia  = `    </div>`
-    linies = linies + linia
-    linia  = `  </div>`
-    linies = linies + linia
-
-    linia  = `  <div class="pokeTypes">`
-    linies = linies + linia
-    linia  = `      <p><span class="pokeType0">Tipologies disponibles</span></p>`
-    linies = linies + linia
-    // Mirem quants types tenim i reperitem la seccio per cadascun
-    for(let z=0;z<num_typs;z++){
-        // codi antic linia09 = linia09 + `TYP [${z}]: <span class="poke_def"> ${poke_typ[z].type.name} </span></br>`
-        linia  = `      <div class="pTypes">`
-        linies = linies + linia
-        linia  = `          <span class="pokeType1"> ${poke_typ[z].type.name} </span>`
-        linies = linies + linia
-        linia  = `      </div>`
-        linies = linies + linia
-    }
-    linia  = `  </div>`
-    linies = linies + linia
-
-    linia  = `  <div class="pokeBtn">`
-    linies = linies + linia
-    linia  = `    <div class="pBtn">`
-    linies = linies + linia
-    linia  = `        <span class="pokeBtn0"><a href="llistat.html">RETORNAR AL LLISTAT</a></span>`
-    linies = linies + linia
-    linia  = `  </div>`
-    linies = linies + linia
-
-       linia  = `</article>`
-    linies = linies + linia
-
-    let codiHTML = ""
-    codiHTML = linies
-    /* ************************************************************************************************************ */
 
     /* Afegim el codi HTML creat a la pagina web .... */
     const DOM_llistat = document.querySelector("main section.detall");
@@ -694,7 +504,6 @@ async function llistat_configuracioURLSenseParametresAmbRetorn(){
             // Construim el codi HTML per representar els pokemons
             let pokecards=[]
             for(let x=0; x<10; x++){
-                
                 // recuperem els valors qeu ens calen del array ....
                 let poke_img   = array_pokemons[x].sprites.front_default
                 let poke_id    = array_pokemons[x].id
@@ -702,7 +511,6 @@ async function llistat_configuracioURLSenseParametresAmbRetorn(){
                 let poke_atk   = array_pokemons[x].stats[1].base_stat
                 let poke_def   = array_pokemons[x].stats[2].base_stat
             
-                /* ANULEM; AQUEST CODI PE EM POSAREM UN DE MES COMPLERT .....
                 // Recrearem la estructura HTML linia a linia ...
                 // NOTA: Afegim la linia 08a!!!!
                 linia01    = '<article class="card">'
@@ -722,81 +530,6 @@ async function llistat_configuracioURLSenseParametresAmbRetorn(){
             
                 // Ho afegim tot a un array ....
                 pokecards.push(linia01 + linia02 + linia03 + linia04 + linia05 + linia06 + linia07 + linia08 + linia08a + linia09)
-                */
-
-                /* ******************* MODIFICACIO ESTRUCTURA DE LA CARD PER ADAPTAR A CANVIS DESDE 20220906 ***************** */
-                linia = ""
-                linies = ""
-                // Fem les linies del codi nou de HTML ....
-                linia  = '<article class="pokeCard">'
-                linies = linies + linia
-                linia  = `  <div class="pokeImg">`
-                linies = linies + linia
-                linia  = `    <div class="pID">`
-                linies = linies + linia
-                linia  = `        <span class="pokeId0">ID</span>`
-                linies = linies + linia
-                linia  = `        <span class="pokeId1">${poke_id} </span>`
-                linies = linies + linia
-                linia  = `    </div>`
-                linies = linies + linia
-                linia  = `    <div class="pImg">`
-                linies = linies + linia
-                linia  = `        <img src="${poke_img}" alt="">`
-                linies = linies + linia
-                linia  = `    </div>`
-                linies = linies + linia
-                linia  = `    <div class="pName">`
-                linies = linies + linia
-                linia  = `        <span class="pokeName0">NOM:</span>`
-                linies = linies + linia
-                linia  = `        <span class="pokeName1">${poke_nom}</span>`
-                linies = linies + linia
-                linia  = `    </div>`
-                linies = linies + linia
-                linia  = `  </div>`
-                linies = linies + linia
-                linia  = `  <div class="pokeData">`
-                linies = linies + linia
-                linia  = `    <div class="pAtk">`
-                linies = linies + linia
-                linia  = `        <span class="pokeAtk0">Atac</span><br>`
-                linies = linies + linia
-                linia  = `        <span class="pokeAtk1">[${poke_atk}]</span>`
-                linies = linies + linia
-                linia  = `    </div>`
-                linies = linies + linia
-
-                linia  = `    <!--`
-                linia  = `    <div class="pCuadrat"></div>`
-                linia  = `    -->`
-
-                linia  = `    <div class="pDef">`
-                linies = linies + linia
-                linia  = `        <span class="pokeDef0">Defensa</span><br>`
-                linies = linies + linia
-                linia  = `        <span class="pokeDef1">[${poke_def}]</span>`
-                linies = linies + linia
-                linia  = `    </div>`
-                linies = linies + linia
-                linia  = `  </div>`
-                linies = linies + linia
-                linia  = `  <div class="pokeBtn">`
-                linies = linies + linia
-                linia  = `    <div class="pBtn">`
-                linies = linies + linia
-                linia  = `        <span class="pokeBtn0"><a href="llistat.html?pokeID=${poke_id}">MES DADES</a></span>`
-                linies = linies + linia
-                linia  = `    </div>`
-                linies = linies + linia
-                linia  = `  </div>`
-                linies = linies + linia
-                linia  = `</article>`
-                linies = linies + linia
-
-                //  i les afegim al array de articles ....
-                pokecards.push(linies)
-                /* ************************************************************************************************************ */
             }
             
             // Afegim el codi HTML creat a la pagina web ....

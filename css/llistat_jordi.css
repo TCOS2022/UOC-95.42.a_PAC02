@@ -1,7 +1,3 @@
-
-
-
-
 /* BASIC RESET */
 *{
     padding:0;
@@ -9,9 +5,12 @@
     box-sizing: border-box;
 }
 
+
 /* DEVELOPPING */
+/*
 header,main,footer{border:green solid 2px}
 section {border: red 2px dotted}
+*/
 
 /* ASIGNACIO DELS COLORS SEGONS EL TEMA */
 body {
@@ -39,22 +38,17 @@ header ul li.li_theme ul li.theme_selected {
 }
 header ul li.li_theme ul li:hover   {background-color: orange;}
 
+
 /* AREA DE LOADING */
-section.loading{
-    display:block
-}
+section.loading {display:flex}
+
 
 /* AREA DE BUSCADOR */
-section.buscador{
-    display:block
-}
+section.buscador {display:flex}
 
 /* AREA DE LLISTAT */
-section.llistat{
-    display:none
-}
+section.llistat {display:none}
+
 
 /* AREA DE DETALL */
-section.detall{
-    display:none
-}
+section.detall {display:none}

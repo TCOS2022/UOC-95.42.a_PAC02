@@ -13,7 +13,7 @@ function combat_cardVoltejar(idvalue){
 
     /* Seleccionem totes les cards */
     console.log("Function: combat cardVoltejar ",idvalue)
-    let cartes = document.querySelectorAll("section.combat_llistat article.pokeCard")
+    let cartes = document.querySelectorAll("section.combat_llistat article.card")
     let cartesTope = cartes.length
     console.log("Cartes triades: ", cartes)
 
@@ -69,7 +69,7 @@ function combat_combat(id_defensor,arrayPokemons){
     let cartes_combat=[]
 
     /* Busquem quines cartes estan seleccionades */
-    cartes_visibles = document.querySelectorAll("section.combat_llistat .pokeCard.activada")
+    cartes_visibles = document.querySelectorAll("section.combat_llistat .card.activada")
     console.log("tenim [" + cartes_visibles.length + "] cartes visibles")
 
     /* Definim qui ataca i qui defen */
@@ -229,7 +229,7 @@ async function combat_initialize(){
     let array_cards = []
     for(let y=0; y<10; y++){
         // Obtenim els valors que em de insertar al codi HTML
-        let poke_URLimgTapa   = "media/imatges/cartes/pokemon_card_backside2.png"
+        let poke_URLimgTapa   = "media/imatges/cartes/cartaAS_posterior.png"
         let poke_URLimgFront1 = array_pokemons[y].sprites.front_default
         let poke_URLimgFront2 = array_pokemons[y].sprites.back_default
         let poke_id           = array_pokemons[y].id
@@ -241,7 +241,6 @@ async function combat_initialize(){
         //       i el push() ens permet de anar mes rapid que no fent un sumatori de linies
         // NOTA: el HTML te dos parts, la tapa i les dades que es superposen swegons la card tingui o no
         //       una clase determinada: "activada"
-        /*
         let arrayLiniesHTML = []
         let linia = ""
         linia = `<div class="cardContainer">`                                       ; arrayLiniesHTML.push(linia);
@@ -267,67 +266,6 @@ async function combat_initialize(){
         // console.log("card nº [" + y + "]")
         // console.log(arrayLiniesHTML)
         array_cards.push(arrayLiniesHTML)
-        */
-
-        /* ****************** MODIFICACIO 20220906 NOU CODI PER LES CARDS ******************************* */
-        let arrayLiniesHTML = []
-        let linia = ""
-
-        linia  = `<div class="pokeContainer">`                          ; arrayLiniesHTML.push(linia);
-        linia  = `<article class="pokeCard" id=${poke_id}>`             ; arrayLiniesHTML.push(linia);
-        linia  = '  <div class="poke_tapa">'                            ; arrayLiniesHTML.push(linia);
-        linia  = `      <img src='${poke_URLimgTapa}' alt=''>`          ; arrayLiniesHTML.push(linia);
-        linia  = '  </div>'                                             ; arrayLiniesHTML.push(linia);
-        linia  = '  <div class="poke_contingut">'                       ; arrayLiniesHTML.push(linia);
-        linia  = `    <div class="pokeImg">`                            ; arrayLiniesHTML.push(linia);
-        linia  = `      <div class="pID">`                              ; arrayLiniesHTML.push(linia);
-        linia  = `        <span class="pokeId0">ID</span>`              ; arrayLiniesHTML.push(linia);
-        linia  = `        <span class="pokeId1">${poke_id} </span>`     ; arrayLiniesHTML.push(linia);
-        linia  = `      </div>`                                         ; arrayLiniesHTML.push(linia);
-        linia  = `      <div class="pImg">`                             ; arrayLiniesHTML.push(linia);
-
-        /*
-        linia = `           <img src='${poke_URLimgFront1}' alt=''>
-                            <img src='${poke_URLimgFront2}' alt=''>`    ; arrayLiniesHTML.push(linia);
-        */
-
-        linia = `           <img src='${poke_URLimgFront1}' alt=''>`    ; arrayLiniesHTML.push(linia);
-
-        linia  = `      </div>`                                         ; arrayLiniesHTML.push(linia);
-        linia  = `      <div class="pName">`                            ; arrayLiniesHTML.push(linia);
-        linia  = `        <span class="pokeName0">NOM:</span>`          ; arrayLiniesHTML.push(linia);
-        linia  = `        <span class="pokeName1">${poke_nom}</span>`   ; arrayLiniesHTML.push(linia);
-        linia  = `      </div>`                                         ; arrayLiniesHTML.push(linia);
-        linia  = `    </div>`                                           ; arrayLiniesHTML.push(linia);
-        linia  = `  <div class="pokeData">`                             ; arrayLiniesHTML.push(linia);
-        linia  = `    <div class="pAtk">`                               ; arrayLiniesHTML.push(linia);
-        linia  = `        <span class="pokeAtk0">Atac</span><br>`       ; arrayLiniesHTML.push(linia);
-        linia  = `        <span class="pokeAtk1">[${poke_atk}]</span>`  ; arrayLiniesHTML.push(linia);
-        linia  = `    </div>`                                           ; arrayLiniesHTML.push(linia);
-        /*
-        linia  = `    <!--`
-        linia  = `    <div class="pCuadrat"></div>`
-        linia  = `    -->`
-        */
-        linia  = `    <div class="pDef">`                               ; arrayLiniesHTML.push(linia);
-        linia  = `        <span class="pokeDef0">Defensa</span><br>`    ; arrayLiniesHTML.push(linia);
-        linia  = `        <span class="pokeDef1">[${poke_def}]</span>`  ; arrayLiniesHTML.push(linia);
-        linia  = `    </div>`                                           ; arrayLiniesHTML.push(linia);
-        linia  = `  </div>`                                             ; arrayLiniesHTML.push(linia);
-        /*                
-        linia  = `  <!-- Anulem aixo pq el COMBAT no porta boto de DETALL / tambe val posar display:none al CSS / o simplent no afegir-lo al array`
-        linia  = `  <div class="pokeBtn">`
-        linia  = `    <div class="pBtn">`
-        linia  = `        <span class="pokeBtn0"><a href="llistat.html?pokeID=${poke_id}">MES DADES</a></span>`
-        linia  = `    </div>`
-        linia  = '  </div>'
-        linia  = '  -->'
-        */
-        linia  = `</article>`                                           ; arrayLiniesHTML.push(linia);
-        linia  = '</div>'                                               ; arrayLiniesHTML.push(linia);
-
-        array_cards.push(arrayLiniesHTML)
-        /* ********************************************************************************************** */
     }
 
     // ja podem pintar el codi al html ....
@@ -347,7 +285,7 @@ async function combat_initialize(){
     ancla.innerHTML = codiHTML
 
     /* Afegir events a les cartes */
-    let ancla1 = document.querySelectorAll("section.combat_llistat article.pokeCard")
+    let ancla1 = document.querySelectorAll("section.combat_llistat article.card")
     ancla1.forEach(carta => {
         carta.addEventListener("click", function(e){
             // Al fer click a sobre de una determinada carta:
@@ -355,7 +293,6 @@ async function combat_initialize(){
             //  NOTA: this fa referencia al objecte carta(un article) sobre el qeu em fet click
             //  NOTA: this.id fa referencia al id del article -> <article id="pepe">
             let pokeID = this.id
-            console.log(pokeID)
             //  Voltegem la carta canviant si te o no la clase "activada"
             console.log("voltejant carta: ", pokeID)
             combat_cardVoltejar(pokeID);
@@ -369,7 +306,7 @@ async function combat_initialize(){
                     carta.classList.remove("activada")
                 });
                 console.log("Eliminant clase 'activada' dels articles")
-                console.log("Cartes actives actualment: ",document.querySelectorAll("section.combat_llistat article.activada").length)
+                console.log("Cartes actives actualment: ",document.querySelectorAll("section.combat_llistat .card.activada").length)
             }else{
                 if(cartes_visibles.length==2){
                     //  SI! -> anem a COMBAT, indicant qeu la actual es la que defensa
