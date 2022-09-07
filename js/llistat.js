@@ -478,8 +478,13 @@ async function llistat_configuracioURLAmbParametres(){
     /*
     // Recrearem la estructura HTML linia a linia ...
     linia01    = '<article class="card">'
+    
     linia02    = `     <img src="${poke_img1}" alt="imatge del pokemon presentat" class="poke_img">`
     linia03    = `     <img src="${poke_img2}" alt="imatge del pokemon presentat" class="poke_img">`
+
+    linia2     = `     <img src="${poke_img1}" alt="imatge del pokemon presentat" class="poke_img">`
+                 `     <img src="${poke_img2}" alt="imatge del pokemon presentat" class="poke_img">`
+
     linia04    = '     <div class="dades">'        
     linia05    = `           ID:  <span class="poke_id">  ${poke_id}  </span></br>`        
     linia06    = `           NOM: <span class="poke_nom"> ${poke_nom} </span></br>`        
