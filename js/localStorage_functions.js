@@ -19,8 +19,8 @@ function LS_Check(lskey){
     // Nota podem fer servir: window.localStorage.getItem('Sidebar') !== undefined
     // console.log("Valor checkejat:" +  window.localStorage.getItem(lskey))
     if (
-        (window.localStorage.getItem(lskey) !== undefined) &&
-        (window.localStorage.getItem(lskey) !== null)
+        (localStorage.getItem(lskey) !== undefined) &&
+        (localStorage.getItem(lskey) !== null)
        )
         {return true}else{return false}
 }

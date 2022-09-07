@@ -45,6 +45,12 @@ section.loading {display:flex}
 
 /* AREA DE BUSCADOR */
 section.buscador {display:flex}
+section.buscador {
+    margin: 10px 0;
+    padding: 20px;
+    color: black;
+    background-color: grey;
+}
 
 /* AREA DE LLISTAT */
 section.llistat {display:none}
