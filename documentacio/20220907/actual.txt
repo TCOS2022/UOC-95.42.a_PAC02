@@ -10,7 +10,7 @@ Coses que calia arreglar:
             let elements            = document.querySelectorAll("article.card")
             let elementsNames       = document.querySelectorAll("span.nom_poke")
     linia 130
-            let elementsNumber      = elements.length-1
+            let elementsNumber      = elements.length
 
     CODI NOU (llistat.js)
     linia 068
@@ -46,30 +46,33 @@ Coses que calia arreglar:
 
     CODI NOU (llistat.js)
     linia 823
-        const targetes = document.querySelectorAll("article pokeBtn0 a")
+        const targetes = document.querySelectorAll("article .pokeBtn0 a")
 
   SOLVE: Sembla que el problema es que per alguna rao, no es guarda el llistat/array generat ABANS de saltar al detall
 
   SOLVE: vale! ja em trobat el problema, de fet 2 problemes ...
     a) A "configuracioURLAmbParametres" tenim malament la seguent asignacio amb el nom antic de clase
-    CODI NOU (llistat.js)
-    linia 343
-        const targetes = document.querySelectorAll("article a")
+        CODI VELL (llistat.js)
+        CODI NOU (llistat.js)
+        linia 343
+            const targetes = document.querySelectorAll("article a")
 
     b) A "configuracioURLAmbparametresAmbRetorn" la estructura esta malament!!!! falten nivells de contenidors 
-    La estrucutura ha de incloure:
+    La estructura ha de incloure:
 
     CODI VELL (llistat.js)
     linia 748
     // Fem les linies del codi nou de HTML ....
                 linia  = '<article class="pokeCard">'
-                linies = linies + linia
                 linia  = `  <div class="pokeImg">`
-                linies = linies + linia
                 linia  = `    <div class="pID">`
-                linies = linies + linia
+
     CODI NOU
             pokeContainer
                 pokeCard
                     poke_tapa
                     poke_contingut
+                        pokeImg
+                            pID
+                                pokeId0
+                                pokeId1
