@@ -10,7 +10,7 @@
 /* ASIGNACIO DELS COLORS SEGONS EL TEMA */
 body {
     background-color: var(--bg_color);
-    color: var(--font_color);
+    color:            var(--font_color);
 }
 
 /* ****************************************************************** */
@@ -47,15 +47,30 @@ header ul {
 
 header ul li {display: inline-block;}
 header ul li.li_theme ul li{
-    border:1px black solid;
+    border:1px var(--font_color) solid;
+    background-color: var(--color4);
     padding: 5px;
-    background-color: darkgray;
-    color:darkgreen
 }
+
 header ul li.li_theme ul li.theme_selected {
-    background-color: blueviolet !important; 
-    color:yellow !important;
+    background-color: var(--color3); 
+    color:var(--font_color);
     font-size: 1.25 rem !important;
     font-weight: bolder;
 }
-header ul li.li_theme ul li:hover   {background-color: orange;}
+
+header ul li.li_theme ul li:hover   {
+    background-color: var(--color3);
+    color: var(--font_color);
+}
+
+a {
+    color: var(--font_color); 
+}
+
+
+/* AREA DE BUSCADOR */
+section.buscador {
+    background-color: var(--color1);
+    color: var(--color2);
+}

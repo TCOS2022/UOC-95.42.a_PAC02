@@ -13,12 +13,10 @@
     --font-type:   inferno;
     --font-weight: bold;
     --font-style:  italic;
-}
 
-body {
-    background-color:   var(--bg_color);
-    color:              var(--font_color);
-    font-family:        var(--font-type);
-    font-weight:        var(--font-weight);
-    font-style:         var(--font-style);
+    --color1:#675050;
+    --color2: #382626;
+    --color3:#a57b64;
+    --color4: #250e0e;
+    --color5: #905b5b;
 }

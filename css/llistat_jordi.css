@@ -3,6 +3,8 @@
     padding:0;
     margin:0;
     box-sizing: border-box;
+    font-family: sans-serif;
+    line-height: 25px;
 }
 
 
@@ -22,21 +24,31 @@ body {
 /* AREA DE NAVEGACIO */
 header ul {
     list-style: none;
+    display: flex;
+    justify-content: space-between;
 }
 
 header ul li {display: inline-block;}
 header ul li.li_theme ul li{
-    border:1px black solid;
+    /* border:1px black solid; */
     padding: 5px;
-    background-color: darkgray;
+    /* background-color: darkgray; */
 }
+
+/* IRENE: He quitado el !important para que los colores no sean definitivos 
+y se puedan adaptar al tema + utilizo las variables*/
+
 header ul li.li_theme ul li.theme_selected {
-    background-color: blueviolet !important; 
-    color:yellow !important;
-    font-size: 125% rem !important;
+    background-color: var(--color3); 
+    color:var(--font_color);
+    font-size: 125% rem;
     font-weight: bolder;
 }
-header ul li.li_theme ul li:hover   {background-color: orange;}
+
+header ul li.li_theme ul li:hover {
+    background-color: var(--color3);
+    color: var(--font_color);
+}
 
 
 /* AREA DE LOADING */
@@ -45,11 +57,15 @@ section.loading {display:flex}
 
 /* AREA DE BUSCADOR */
 section.buscador {display:none}
-section.buscador {
-    margin: 10px 0;
-    padding: 20px;
-    color: black;
-    background-color: grey;
+
+.buscador{
+    background-color: var(--color1);
+    color: var(--color2);
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 /* AREA DE LLISTAT */
