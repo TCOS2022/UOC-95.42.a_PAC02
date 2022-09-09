@@ -746,7 +746,7 @@ async function llistat_configuracioURLSenseParametresAmbRetorn(){
                 linia = ""
                 linies = ""
                 // Fem les linies del codi nou de HTML ....
-                linia  = '<div classs="pokeContainer">'
+                linia  = '<div class="pokeContainer">'
                 linies = linies + linia
         
                 linia  = '  <article class="pokeCard">'

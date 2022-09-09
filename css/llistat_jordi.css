@@ -44,7 +44,7 @@ section.loading {display:flex}
 
 
 /* AREA DE BUSCADOR */
-section.buscador {display:flex}
+section.buscador {display:none}
 section.buscador {
     margin: 10px 0;
     padding: 20px;
@@ -53,7 +53,7 @@ section.buscador {
 }
 
 /* AREA DE LLISTAT */
-section.llistat {display:none}
+section.llistat {display:none;flex-wrap:wrap}
 
 
 /* AREA DE DETALL */

@@ -14,6 +14,8 @@ section.loading{
 /* ********************************************************************* */
 /* AREA DE LLISTAT DE CARTES */
 /* ********* VERSIO JORDI. PROVA DE CONCEPTE 20220906 - INICI - ******** */
+.combat_llistat{display:flex;flex-wrap: wrap;}
+
 .combat_llistat .pokeContainer{
     /* Afegim valor de perspectiva 3D al contenidor de la carta */
     -webkit-perspective:800;
