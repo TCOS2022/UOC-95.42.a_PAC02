@@ -1,0 +1,47 @@
+.pokeCard { position: relative; width: min-content; border: 5px solid; border-radius: 10%; }
+.pokeImg, .pokeData, .pokeBtn { height: 33%; position: relative; overflow: hidden; margin: 5px 0px; }
+.pokeImg .pID, .pokeImg .pImg, .pokeImg .pName { width: 100%; }
+.pokeImg .pID { text-align: left; padding: 10px; }
+.pokeImg .pID .pokeId0 { color: aqua; font-weight: bolder; }
+.pokeImg .pID .pokeId1 { color: blue; font-weight: normal; font-style: italic; }
+.pokeImg .pImg { position: relative; height: 100%; text-align: center; }
+.pokeImg .pImg img { position: relative; border: 10px solid; border-radius: 50%; width: 90%; padding: 10px; }
+.pokeImg .pImg img.parella { display: inline-block; width: 45%; }
+.pokeImg .pName { text-align: right; }
+.pokeImg .pName .pokeName0 { color: aqua; font-weight: bolder; display: flex; justify-content: center; }
+.pokeImg .pName .pokeName1 { background-color: aqua; color: blue; font-weight: normal; font-style: italic; text-transform: capitalize; display: flex; justify-content: space-evenly; }
+.pokeData { position: relative; height: 50%; display: flex; justify-content: space-around; margin: 10px 0px; }
+.pokeData span { text-align: center; }
+.pokeData .pAtk, .pokeData .pDef { border: 5px solid black; background-color: lightseagreen; border-radius: 50%; width: 45%; padding: 25px; }
+.pokeData .pAtk { background-color: red; color: blue; }
+.pokedata .pDef { background-color: green; color: blue; }
+.pokeData .pAtk .pokeAtk1 { background-color: blue; color: green; font-weight: bolder; }
+.pokeData .pDef .pokeDef0 {color: rgb(0 0 0);font-weight: bolder;}
+.pokeBtn .pBtn { display: block; margin: 10px 50px; padding: 5px; background-color: grey; border: 2px solid black; border-radius: 5px; }
+.pokeTypes { display: block; width: 75%; text-align: center; padding: 10px; background-color: lightgray; border: 5px solid black; margin: auto; }
+.pokeTypes .pTypes { display: block; padding: 10px; border: 2px solid black; text-align: center; width: 100%; margin: auto; }
+.pokeTypes .pTypes .pokeType1 { color: blue; background-color: lightblue; }
+.pokeCard { margin: 23px; border: 2px solid var(--font_color); border-radius: 5px; background-color: var(--color4); box-shadow: 8px 8px 8px 0 var(--color5); }
+.pokeImg, .pokeData, .pokeBtn {height: 33%;position: relative;overflow: hidden;margin: 5px 12px;}
+.pokeImg .pID, .pokeImg .pImg, .pokeImg .pName { width: 100%; }
+.pokeImg .pID { text-align: left; padding-left: 25px; }
+.pokeImg .pID .pokeId0 { color: var(--font_color); font-weight: bold; }
+.pokeImg .pID .pokeId1 { color: var(--font_color); font-weight: bolder; font-style: italic; }
+.pokeImg .pImg { position: relative; height: 100%; text-align: center; }
+.pokeImg .pImg img { position: relative; border: 10px solid var(--bg_color); border-radius: 50%; background-color: var(--color2); width: 90%; padding: 10px; }
+.pokeImg .pImg img.parella { display: inline-block; width: 45%; }
+.pokeImg .pName { text-align: right; }
+.pokeImg .pName .pokeName0 { color: var(--font_color); font-weight: bolder; }
+.pokeImg .pName .pokeName1 { background-color: rgba(216, 57, 57, 0); color: var(--font_color); font-weight: bold; font-style: italic; text-transform: capitalize; }
+.pokeData { position: relative; height: 50%; display: flex; justify-content: space-around; margin: 10px 0px; }
+.pokeData span { text-align: center; }
+.pokeData .pAtk, .pokeData .pDef { border: 2px solid var(--color2); background-color: var(--defensa); border-radius: 10%; width: 45%; padding: 2px; text-align: center; }
+.pokeData .pAtk {background-color: var(--atac);color: rgb(12 12 12);font-weight: bolder;}
+.pokedata .pDef { background-color: var(--defensa); color: var(--font_color); font-weight: bolder; }
+.pokeData .pAtk .pokeAtk1 { background-color: transparent; color: var(--font_color); font-weight: bolder; }
+.pokeData .pDef .pokeDef1 { background-color: transparent; color: var(--font_color); font-weight: bolder; }
+.pokeBtn .pBtn { display: block; margin: 10px 50px; padding: 5px; background-color: var(--color2); border: 2px solid var(--color3); border-radius: 10px; }
+.pokeBtn .pBtn:hover { border-color: var(--color1); color: var(--color1); font-weight: bold; }
+.pokeTypes { display: block; width: 75%; text-align: center; padding: 10px; background-color: var(--color2); border: 5px solid var(--font_color); margin: auto; }
+.pokeTypes .pTypes { display: block; padding: 10px; border: 2px var(--font_color); text-align: center; width: 100%; margin: auto; }
+.pokeTypes .pTypes .pokeType1 { color: var(--color1); font-size: xx-large; font-weight: bolder; }

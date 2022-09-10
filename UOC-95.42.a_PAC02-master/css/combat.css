@@ -1,0 +1,99 @@
+/* ****************************************************************** */
+/* DEVELOPPING */
+header,main,footer{border:green solid 2px}
+section {border: red 2px dotted}
+
+/* ****************************************************************** */
+/* AREA DE LOADING */
+section.loading{
+    display:block
+}
+
+/* ****************************************************************** */
+/* AREA DE LLISTAT DE CARTES */
+
+section.combat_llistat div.pokeContainer{
+    /* Afegim valor de perspectiva 3D al contenidor de la carta */
+    -webkit-perspective:1200;
+    -moz-perspective:1200;
+    perspective: 1200;
+    display:flex;
+}
+
+section.combat_llistat div.pokeContainer article.pokeCard {
+    position:relative;
+    /* Afegim la gestio heredada dels efectes 3D */
+    -moz-transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;
+    transform-style: preserve-3d;
+    /* Definim com volem que siguin les transcicions aplicades */
+    transition: all 5s ease;
+    /* Li posem un border pq ajusti be quant sigui activada */
+    border: green 5px solid;
+    border-radius: 25px;
+}
+
+section.combat_llistat div.pokeContainer article.pokeCard:hover {
+    /* Afegim el efecte de rotacio de la carta (amb les dues imatges: frontal i posterior) quant fem hover */
+    -webkit-transform:rotateY(179.9deg);
+    -moz-transform:rotateY(179.9deg);
+    transform: rotateY(179.9deg);
+    border: yellow 5px solid;
+    border-radius: 25px;
+}
+
+section.combat_llistat div.pokeContainer article.pokeCard.activada {
+    /* Afegim el efecte de rotacio de la carta (amb les dues imatges: frontal i posterior) quant fem click */
+    -webkit-transform:rotateY(179.9deg);
+    -moz-transform:rotateY(179.9deg);
+    transform: rotateY(179.9deg);
+    border: red 5px solid;
+    border-radius: 25px;
+}
+
+.combat_llistat .poke_tapa, .combat_llistat .poke_contingut{
+    /* Afegim atributs comuns a les dues cares */
+    /* Ens asegurem de qeu omplin els divs ... */
+    height: 100%;
+    width: 100%;
+    position: relative;
+    /* Posem la cara del darrera del div oculta */
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* Asegurem que es mantinguin les propietats 3D heredades */
+    -moz-transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.combat_llistat .poke_tapa img {width: max-content;}
+
+.combat_llistat .poke_contingut{
+    position:absolute;
+    top:0;
+    left:0;
+    /* Girem la part que no volem que es vegui de inici ..... */
+    -webkit-transform:rotateY(179.9deg);
+    -moz-transform:rotateY(179.9deg);
+    transform: rotateY(179.9deg);
+}
+
+/* ********* VERSIO JORDI. PROVA DE CONCEPTE 20220906 - FINAL - ******** */
+/* ****************************************************************** */
+
+/* AREA DE RESULTATS */
+section.combat_resultat{
+    display:none
+}
+
+section.combat_resultat #resultatCombat {
+    color:orange;
+    background-color: blueviolet;
+    font-size:25px;
+    font-weight: bolder;
+    font-style: italic;
+    display:block;
+    padding:25px;
+    text-align: center;
+}

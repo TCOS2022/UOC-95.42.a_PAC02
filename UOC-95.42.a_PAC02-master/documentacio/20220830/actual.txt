@@ -1,0 +1,17 @@
+********************** 20220830 ********************************
+Canvio llistat.css a llistat_jordi.css
+Afegim llistat.css de la Irene
+
+Afegim 2 canvis al CSS: (linies 70 i 86 .... crec)
+    activar el display:none al block de llistat
+    activar el display:none al block de filtres
+
+Afegim el canvi al JS, activar els displays de element (filtres), recordar que CAL CANVIAR-HO EN MES DE 1 LLOC!!!!!
+Com em posat display:flex al css, tambe em de canviar la asignacio via codi al JS ..... 
+(codi llistat.js linies 286,288? i 580/582?)
+    // Activem    section FILTRE
+    document.querySelector("section.buscador").style.display="flex";
+    // Activem    section LLISTAT
+    document.querySelector("section.llistat").style.display="flex";
+
+

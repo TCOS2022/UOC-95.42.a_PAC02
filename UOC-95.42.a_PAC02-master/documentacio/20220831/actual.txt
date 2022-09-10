@@ -1,0 +1,195 @@
+************************* yyyymmdd ***************************
+COMBAT:
+Guardem el combat.css com a combat_old.css pq ens cal modificar basntat la seccio de les cartes ....
+
+Afegim una imatge de la tapa de les cartes:
+    "/media/imatges/cartes/cartaAS_posterior.png"
+
+Afegim la ruta al codi (combat.js linia 232)
+    let poke_URLimgTapa   = "media/imatges/cartes/cartaAS_posterior.png"
+
+Afegim el efecte flip a les cartes, per fer-ho em de definir coses al css3 en 3 llocs, i al JS ....
+    
+    CSS3
+    1) Al contenidor de la carta
+    2) A la tapa amb dades (front?)
+    3) A la tapa del darrera (back?)
+
+    Tenim la section que funciona com un contenidor -> <section class="combat_llistat">
+
+    I a dintre tenim esl articles qeu son les cartes:
+
+            <article class="card">
+                <div class="card_tapa">
+                    <img src="" alt="">
+                </div>
+                <div class="card_detall">
+                    <div class="card_detall_imatge">
+                        <img src="" alt="">
+                    </div>
+                    <div class="card_detall_dades">
+                        <span class="card_id">  ID  </span></br>
+                        <span class="card_nom"> NOM </span></br>
+                        <span class="card_atk"> ATK </span></br>
+                        <span class="card_def"> DEF </span>
+                    </div>
+                </div>
+            </article>
+
+    Val, el primer canvi es afegir un div contenidor (div.cardContainer) per poder posar efecte de perspectiva .....
+    Sobre aquest contenidor es on aplicarem els efectes de "hover" i, desde el JS, el de "click" .....
+
+        CODI HTML
+            <div class="cardContainer">
+                <article class="card">
+                    <div class="card_tapa">
+                        <img src="" alt="">
+                    </div>
+                    <div class="card_detall">
+                        <div class="card_detall_imatge">
+                            <img src="" alt="">
+                        </div>
+                        <div class="card_detall_dades">
+                            <span class="card_id">  ID  </span></br>
+                            <span class="card_nom"> NOM </span></br>
+                            <span class="card_atk"> ATK </span></br>
+                            <span class="card_def"> DEF </span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        
+        CODI CSS3:
+        section.combat_llistat div.cardContainer{
+            /* Afegim valor de perspectiva 3D al contenidor de la carta */
+            -webkit-perspective:1200;
+            -moz-perspective:1200;
+            perspective: 1200;
+            display:flex;
+        }
+
+        section.combat_llistat div.cardContainer article.card {
+            position:relative;
+            /* Afegim la gestio heredada dels efectes 3D */
+            -moz-transform-style:preserve-3d;
+            -webkit-transform-style:preserve-3d;
+            transform-style: preserve-3d;
+            /* Definim com volem que siguin les transcicions aplicades */
+            transition: all 1s ease;
+        }
+
+        section.combat_llistat div.cardContainer article.card:hover {
+            /* Afegim el efecte de rotacio de la carta (amb les dues imatges: frontal i posterior) quant fem hover */
+            -webkit-transform:rotateY(179.9deg);
+            -moz-transform:rotateY(179.9deg);
+            transform: rotateY(179.9deg);
+        }
+
+        section.combat_llistat div.cardContainer article.card.activada {
+            /* Afegim el efecte de rotacio de la carta (amb les dues imatges: frontal i posterior) quant fem click */
+            -webkit-transform:rotateY(179.9deg);
+            -moz-transform:rotateY(179.9deg);
+            transform: rotateY(179.9deg);
+        }
+
+        .card_tapa, .card_dades{
+            /* Afegim atributs comuns a les dues cares */
+            /* Ens asegurem de qeu omplin els divs ... */
+            height: 100%;
+            width: 100%;
+            position: relative;
+            /* Posem la cara del darrera del div oculta */
+            -moz-backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            /* Asegurem que es mantinguin les propietats 3D heredades */
+            -moz-transform-style:preserve-3d;
+            -webkit-transform-style:preserve-3d;
+            transform-style: preserve-3d;
+        }
+
+        .card_dades{
+            position:absolute;
+            top:0;
+            left:0;
+            /* Girem la part que no volem que es vegui de inici ..... */
+            -webkit-transform:rotateY(179.9deg);
+            -moz-transform:rotateY(179.9deg);
+            transform: rotateY(179.9deg)
+        }
+
+        .card_dades span {
+            /* A efectes de developping .... */
+            background-color: blue;color: chartreuse;
+        }
+
+        CODI JS
+        Em de modificar 2 coses ....
+           1) El codi que afegeix el div.cardContainer
+           2) El codi qeu canvia el que carai s ha de fer al fer click, que ara, en principi, sera aplicar un rotateY(180deg)
+
+        1) Per sort, com es un array i fem servir push, afegir 2 linies es tant facil com escriure-les, aixo si! en el lloc que lis toca!!!! .....
+            let arrayLiniesHTML = []
+            let linia = ""
+            linia = `<div class="cardContainer">`                                       ; arrayLiniesHTML.push(linia);
+            linia = `<article class='card' id='${poke_id}'>`                            ; arrayLiniesHTML.push(linia);
+            ...
+            linia = `</article>`                                                        ; arrayLiniesHTML.push(linia);
+            linia = `</div>`                                                            ; arrayLiniesHTML.push(linia);
+
+        2) Per canviar el "click" em de modificar algunes cosetes, per començar el ancla del click ....
+            /* Afegir events a les cartes */
+            let ancla1 = document.querySelectorAll("section.combat_llistat article.card")
+
+           I al final, la clase que es modifica, tambe ha de canviar el CSS3 .....
+
+                section.combat_llistat div.cardContainer article.card.activada {
+                    /* Afegim el efecte de rotacio de la carta (amb les dues imatges: frontal i posterior) quant fem click */
+                    -webkit-transform:rotateY(179.9deg);
+                    -moz-transform:rotateY(179.9deg);
+                    transform: rotateY(179.9deg);
+                }
+    Finalment, afegirem uns borders de colors pq es pugui saber el estat actual de la carta ....
+
+        section.combat_llistat div.cardContainer article.card {
+            position:relative;
+            /* Afegim la gestio heredada dels efectes 3D */
+            -moz-transform-style:preserve-3d;
+            -webkit-transform-style:preserve-3d;
+            transform-style: preserve-3d;
+            /* Definim com volem que siguin les transcicions aplicades */
+            transition: all 5s ease;
+            /* Li posem un border pq ajusti be quant sigui activada */
+            border: green 5px solid;
+            border-radius: 25px;
+        }
+
+        section.combat_llistat div.cardContainer article.card:hover {
+            /* Afegim el efecte de rotacio de la carta (amb les dues imatges: frontal i posterior) quant fem hover */
+            -webkit-transform:rotateY(179.9deg);
+            -moz-transform:rotateY(179.9deg);
+            transform: rotateY(179.9deg);
+            border: yellow 5px solid;
+            border-radius: 25px;
+        }
+
+        section.combat_llistat div.cardContainer article.card.activada {
+            /* Afegim el efecte de rotacio de la carta (amb les dues imatges: frontal i posterior) quant fem click */
+            -webkit-transform:rotateY(179.9deg);
+            -moz-transform:rotateY(179.9deg);
+            transform: rotateY(179.9deg);
+            border: 5px red solid;
+            border-radius: 25px;
+        }
+
+    I arreglem les imatges i el centrat de text dels spans....
+
+        .card_dades_imatge img {width: 49%}
+
+        .card_dades_dades {text-align: center;}
+
+NOTES: Al intentar ajustar les capes amb z-index ... ens em adonat que si tambe fas transforms, el z-index s en va "por los cerros de Ubeda"
+degut a que les transformacions tambe afecten al posicionament en capes
+https://philipwalton.com/articles/what-no-one-told-you-about-z-index/
+
+

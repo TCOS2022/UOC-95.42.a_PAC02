@@ -1,0 +1,33 @@
+/* ****************************************** */
+/* Arxiu CSS que es configura pel tema SYSTEM */
+/* ****************************************** */
+
+/* 
+NOTA: El tema que esta gestionat pel propi navegador, es controla
+amb mediaqueries 
+
+    @media (prefers-color-scheme: dark) {
+        body { 
+            background: black; 
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        body { 
+            background: white; 
+        }
+    }
+*/
+
+
+@media (prefers-color-scheme: dark) {
+    body { 
+        background: black; 
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body { 
+        background: white; 
+    }
+}

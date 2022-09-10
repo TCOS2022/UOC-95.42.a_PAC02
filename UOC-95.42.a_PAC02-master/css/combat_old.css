@@ -1,0 +1,163 @@
+/* ****************************************************************** */
+/* BASIC RESET */
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+/* ****************************************************************** */
+/* DEVELOPPING */
+header,main,footer{border:green solid 2px}
+section {border: red 2px dotted}
+
+/* ****************************************************************** */
+/* ASIGNACIO DELS COLORS SEGONS EL TEMA */
+body {
+    background-color: var(--bg_color);
+    color: var(--font_color);
+}
+
+/* ****************************************************************** */
+/* AREA DE NAVEGACIO */
+header ul {
+    list-style: none;
+}
+
+header ul li {display: inline-block;}
+header ul li.li_theme ul li{
+    border:1px black solid;
+    padding: 5px;
+    background-color: darkgray;
+    color:darkgreen
+}
+header ul li.li_theme ul li.theme_selected {
+    background-color: blueviolet !important; 
+    color:yellow !important;
+    font-size: 1.25 rem !important;
+    font-weight: bolder;
+}
+header ul li.li_theme ul li:hover   {background-color: orange;}
+
+/* ****************************************************************** */
+/* AREA DE LOADING */
+section.loading{
+    display:block
+}
+
+/* ****************************************************************** */
+/* AREA DE LLISTAT */
+/* OLD VALUES !!!!! */
+section.combat_llistat{
+    /* display:none */
+    position: relative;
+    display:none;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+section.combat_llistat article {
+    position: relative;
+    border: solid blue 5px;
+    background-color: grey;
+    padding: 10px;
+    margin: 2px;
+    font-size: 125%;
+    font-weight: bolder;
+    justify-content: space-between;
+}
+
+section.combat_llistat article .card:hover{
+    position:relative;
+    z-index: 0;
+    display:block;
+    background-color: blueviolet;
+}
+
+section.combat_llistat article div.card_tapa{
+    position: relative;
+    top:0;
+    left:0;
+    z-index:1;
+    background-color: blueviolet;
+    height: 100%;
+    display:none
+}
+
+section.combat_llistat article.card.activada{
+    position:relative;
+    z-index: 0;
+    display:block;
+    background-color: yellow;
+}
+*/
+
+/* NEW VALUES !!!!! 
+    section.combat_llistat {}
+    section.combat_llistat div.cardContainer {}
+    section.combat_llistat div.cardContainer article.card {}
+    section.combat_llistat div.cardContainer article.card:hover {}
+    section.combat_llistat div.cardContainer article.card.activada {}
+    section.combat_llistat div.cardContainer article.card div.card-tapa {}
+    section.combat_llistat div.cardContainer article.card div.card-tapa img {}
+    section.combat_llistat div.cardContainer article.card div.card-dades {}
+    section.combat_llistat div.cardContainer article.card div.card-dades card_dades_imatge {}
+    section.combat_llistat div.cardContainer article.card div.card-dades card_dades_imatge img {}
+    section.combat_llistat div.cardContainer article.card div.card-dades card_dades_dades {}
+    section.combat_llistat div.cardContainer article.card div.card-dades card_dades_dades span {}
+*/
+
+section.combat_llistat div.cardContainer{
+    /* Afegim valor de perspectiva 3D al contenidor de la carta */
+    perspective: 1200;
+}
+
+section.combat_llistat div.cardContainer article.card {
+    /* Afegim la gestio heredada dels efectes 3D */
+    transform-style: preserve-3d;
+    /* Definim com volem que siguin les transcicions aplicades */
+    transition: all .4s ease;
+}
+
+section.combat_llistat div.cardContainer article.card:hover {
+    /* Afegim el efecte de rotacio de la carta (amb les dues imatges: frontal i posterior) quant fem hover */
+    transform: rotateY(179.9deg);
+}
+section.combat_llistat div.cardContainer article.card.activada {
+    /* Afegim el efecte de rotacio de la carta (amb les dues imatges: frontal i posterior) quant fem click */
+    transform: rotateY(179.9deg);
+}
+
+.card-tapa, .card-dades{
+    /* Afegim atributs comuns a les dues cares */
+    /* Ens asegurem de qeu omplin els divs ... */
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    /* Posem la cara del darrera del div oculta */
+    backface-visibility: hidden;
+    /* Asegurem que es mantinguin les propietats 3D heredades */
+    transform-style: preserve-3d;
+}
+
+.card-dades{
+    /* Girem la part que no volem que es vegui de inici ..... */
+    transform: rotateY(179.9deg)
+}
+
+/* ****************************************************************** */
+/* AREA DE RESULTATS */
+section.combat_resultat{
+    display:none
+}
+
+section.combat_resultat #resultatCombat {
+    color:orange;
+    background-color: blueviolet;
+    font-size:25px;
+    font-weight: bolder;
+    font-style: italic;
+    display:block;
+    padding:25px;
+    text-align: center;
+}

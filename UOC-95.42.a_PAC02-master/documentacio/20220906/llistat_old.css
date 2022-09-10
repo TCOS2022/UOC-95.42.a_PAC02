@@ -1,0 +1,120 @@
+/* BASIC RESET */
+* {
+    font-family: sans-serif;
+    line-height: 25px;
+}
+/* *{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+} */
+
+/* DEVELOPPING */
+/* header,main,footer{border:green solid 2px}
+section {border: red 2px dotted} */
+
+/* ASIGNACIO DELS COLORS SEGONS EL TEMA */
+body {
+    background-color: var(--bg_color);
+    color: var(--font_color);
+}
+
+/* CODI IRENE */
+/* AREA DE NAVEGACIO */
+header ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+header ul li.li_nav ul li {
+    border-left: 1px solid;
+    border-right: 1px solid;
+    padding: 10px;
+}
+
+/* header ul li {display: inline-block;} */
+header ul li.li_theme ul li{
+    border:1px black solid;
+    padding: 5px;
+    background-color:  rgb(197 204 218);
+}
+header ul li.li_theme ul li.theme_selected {
+    background-color: slategray !important; 
+    color:whitesmoke !important;
+    font-size: 125% rem !important;
+    font-weight: bolder;
+}
+header ul li.li_theme ul li:hover   {
+    background-color: slategray;
+    color: whitesmoke;
+}
+
+/* AREA DE LOADING */
+section.loading{
+    display:block
+}
+
+/* AREA DE BUSCADOR */
+.buscador{
+    background-color: slategrey;
+    color: whitesmoke;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* NOTA: Aixo es pq al iniciar, NO es vegi el div del buscador/filtre */
+.buscador{display:none}
+
+/* AREA DE LLISTAT */
+/* section.llistat{
+    display:none
+} */
+
+
+/*CODI IRENE*/
+.llistat {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* NOTA: Aixo es pq al iniciar, NO es vegi el div del llistat */
+.llistat{display:none}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    border: solid 1px darkgrey;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.dades {
+    padding: 40px;
+    font-size: large;
+}
+
+.poke_btnDetalls {
+    text-align: center;
+    background-color: aliceblue;
+    border-radius: 10px;
+    border: 1px solid darkgrey;
+}
+
+.poke_img {
+    background-color:aliceblue;
+    border-radius: 20px;
+}
+
+.poke_nom {text-transform: capitalize;}
+
+/* AREA DE DETALL */
+section.detall{
+    display:none
+}

@@ -1,0 +1,29 @@
+Va! acabem de comprovar que el selector de tema ... funciona de una manera un tant particular, independent mesn de la apgina.
+
+
+Farem 2 noves funcions:
+
+themeSelector_initializerV2
+    Funcio qeu s encarregara de inicialitzar el gestor de tema
+
+themeSelector_ActivateConfigV2(codiTheme)
+    Funcio que activa el tema indicat
+
+Valeeee ... faltava revisar que quant no te la clau al ls asigni la que te per defecte que es SYSTEM
+
+
+
+********************** 20220830 ********************************
+Afegim llista.css de la Irene
+Canvio llistat.cssa llista_jordi.css
+
+Afegim 2 canvis al CSS: (linies 70 i 86 .... crec)
+    activar el display:none al al block de llistat
+    activar el display:none al al block de filtres
+
+Afegim canvi sl JS, activar els displays de element (filtres), recordar que CAL CANVIAR-HO EN MES DE 1 LLOC!!!!!
+    // Activem    section FILTRE
+    document.querySelector("section.buscador").style.display="flex";
+    // Activem    section LLISTAT
+    document.querySelector("section.llistat").style.display="flex";
+
