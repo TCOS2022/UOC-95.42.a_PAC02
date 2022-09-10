@@ -1,34 +1,38 @@
 /* ARTICLE (es de la clase .pokeCard)
 Recordem la estructura HTML que em recreat ....
 
-    .pokeCard{}
+    section.llistat {}
+    section.llistat div.cardContainer {}
+    section.llistat div.cardContainer article.pokeCard {}
+    section.llistat div.cardContainer article.pokeCard:hover {}
+    section.llistat div.cardContainer article.pokeCard.activada {}
+    section.llistat div.cardContainer article.pokeCard div.poke_tapa {}
+    section.llistat div.cardContainer article.pokeCard div.poke_tapa img {}
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut {}
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg pID
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg pID pokeID0
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg pID pokeID1
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg pImg
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg pImg img (x1 o x2)
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg pName
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg pName pokeName0
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg pName pokename1
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeData
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeData pAtk 
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeData pAtk pokeAtk0
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeData pAtk pokeAtk1
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeData pDef
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeData pDef pokeDef0
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeData pDef pokeDef1
+    
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut .pokeTypes .pTypes .pokeType1 (detall))
 
-    .pokeCard .pokeImg{}
-    .pokeCard .pokeImg .pID
-    .pokeCard .pokeImg .pID .pokeId0{}
-    .pokeCard .pokeImg .pID .pokeId1{}
-    .pokeCard .pokeImg .pImg
-    .pokeCard .pokeImg .pImg img
-    .pokeCard .pokeImg .pName
-    .pokeCard .pokeImg .pName .pokeName0{}
-    .pokeCard .pokeImg .pName .pokeName1{}
+    section.llistat div.cardContainer article.pokeCard div.pokeBtn
+    section.llistat div.cardContainer article.pokeCard div.pokeBtn div.pBtn
+    section.llistat div.cardContainer article.pokeCard div.pokeBtn div pBtn span.pokeBtn0
+    section.llistat div.cardContainer article.pokeCard div.pokeBtn pBtn span.pokeBtn0 a.pBtnpokeBtn1
 
-    .pokeCard .pokeData{}
-    .pokeCard .pokeData{} .pAtk
-    .pokeCard .pokeData{} .pAtk .pokeAtk0{}
-    .pokeCard .pokeData{} .pAtk .pokeAtk1{}
-    .pokeCard .pokeData{} .pDef
-    .pokeCard .pokeData{} .pDef .pokeDef0{}
-    .pokeCard .pokeData{} .pDef .pokeDef1{}
-
-    .pokeCard .pBtn
-    .pokeCard .pBtn .pokebtn0{}
-
-valeeeeee recorda que a la part de combat, em afegit 3 divs, 
-*) un que embolica el article, per poder generar el efecte 3d del flip (.cardContainer)
-*) un que embolica la tapa (.poke_tapa)
-*) un que embolica eks continguts (.poke_contingut)
-NOTA: aquest dos ultims son necesaris pel tema del flip.
 
 Deixo aqui tota la estructura de clases de la part de combat ....
 
@@ -56,10 +60,11 @@ Deixo aqui tota la estructura de clases de la part de combat ....
     section.combat_llistat div.cardContainer article.pokeCard div.poke_contingut pokeData pDef
     section.combat_llistat div.cardContainer article.pokeCard div.poke_contingut pokeData pDef pokeDef0
     section.combat_llistat div.cardContainer article.pokeCard div.poke_contingut pokeData pDef pokeDef1
+    section.combat_llistat div.cardContainer article.pokeCard div.pokeBtn
+    section.combat_llistat div.cardContainer article.pokeCard div.pokeBtn div.pBtn
+    section.combat_llistat div.cardContainer article.pokeCard div.pokeBtn div pBtn span.pokeBtn0
+    section.combat_llistat div.cardContainer article.pokeCard div.pokeBtn div.pBtn span.pokeBtn0 a.pBtnpokeBtn1
 
-    section.combat_llistat div.cardContainer article.pokeCard div.poke_contingut .pokeTypes .pTypes .pokeType1
-
-Nota: Aquest ultim sols es fa servir a detall
 */
 
 

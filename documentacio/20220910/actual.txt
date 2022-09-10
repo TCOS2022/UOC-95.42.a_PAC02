@@ -1,0 +1,107 @@
+FAIL: de vegades algun poke no mostra la seva imatge
+SOLVE:
+    De primer em verificat quins son, per exemple el poke id =901, i em anat a la pokeapi i comprovat qeu realment, aqeust poke NO TE CAP SPRITE.
+    
+    Em creat un parell de imatges vectorials amb inkscape per posar en cas de que retorni "null"
+        media/imatges/fails/imatgeNoDisponible_cuadrada.png 
+        media/imatges/fails/imatgeNoDisponible_rodona.png
+
+    Canviarem el codi del js pq afegeixi la imatge si retorna un null, cal doncs afegir-lo a llistat.js i combat.js
+    CODI VELL 
+    (llistat.js linia 243)
+        let pokecards=[]
+        for(let x=0; x<10; x++){
+            // recuperem els valors qeu ens calen del array ....
+            let poke_img   = array_pokemons[x].sprites.front_default
+            let poke_id    = array_pokemons[x].id
+
+    (llistat.js linia 468)        
+        /* Pintem la card ampliada amb HTML */
+        // recuperem els valors qeu ens calen del array ....
+            let poke_img1  = dadesPokemon.sprites.front_default
+            let poke_img2  = dadesPokemon.sprites.back_default
+
+    (llistat.js linia 712)    
+        // Construim el codi HTML per representar els pokemons
+            let pokecards=[]
+            for(let x=0; x<10; x++){
+                // recuperem els valors qeu ens calen del array ....
+                let poke_img   = array_pokemons[x].sprites.front_default
+                let poke_id    = array_pokemons[x].id
+
+    (combat.js linia 231)
+        // Obtenim els valors que em de insertar al codi HTML
+            let poke_URLimgTapa   = "media/imatges/cartes/pokemon_card_backside2.png"
+            let poke_URLimgFront1 = array_pokemons[y].sprites.front_default
+            let poke_URLimgFront2 = array_pokemons[y].sprites.back_default
+
+    CODI NOU 
+    (llistat.js linia 243)
+        let pokecards=[]
+        for(let x=0; x<10; x++){
+            // recuperem els valors qeu ens calen del array ....
+            let poke_img   = array_pokemons[x].sprites.front_default
+            if(poke_img==null){poke_img=="media/imatges/fails/imatgeNoDiponible_rodona.png"}
+
+    (llistat.js linia 469)
+        /* Pintem la card ampliada amb HTML */
+        // recuperem els valors qeu ens calen del array ....
+        let poke_img1  = dadesPokemon.sprites.front_default
+        if(poke_img1==null){poke_img1=="media/imatges/fails/imatgeNoDiponible_rodona.png"}
+        let poke_img2  = dadesPokemon.sprites.back_default
+        if(poke_img2==null){poke_img2=="media/imatges/fails/imatgeNoDiponible_rodona.png"}
+
+    (llistat.js linia 715)
+        // Construim el codi HTML per representar els pokemons
+        let pokecards=[]
+        for(let x=0; x<10; x++){
+            // recuperem els valors qeu ens calen del array ....
+            let poke_img   = array_pokemons[x].sprites.front_default
+            if(poke_img==null){poke_img=="media/imatges/fails/imatgeNoDiponible_rodona.png"}
+
+    (combat.js linia 231)
+        // Obtenim els valors que em de insertar al codi HTML
+            let poke_URLimgTapa   = "media/imatges/cartes/pokemon_card_backside2.png"
+            let poke_URLimgFront1 = array_pokemons[y].sprites.front_default
+            if(poke_URLimgFront1==null){poke_URLimgFront1=="media/imatges/fails/imatgeNoDiponible_rodona.png"}
+            let poke_URLimgFront2 = array_pokemons[y].sprites.back_default
+            if(poke_URLimgFront2==null){poke_URLimgFront2=="media/imatges/fails/imatgeNoDiponible_rodona.png"}
+
+NOTA: Vaaaaleeee!!!! doncs resulta que "null" es de allo mes lios, pq null==null retorna FALSE!!! .... en les condicionals.
+Despres de mirar una miqueta mes, sembla que la manera menys dolenta es mirar si el seu tipus es in object, per tant haurem
+de modificar els if a:
+    if((variable===null)&&(typeof(variable=="object"))) i quedara aixi:
+
+    CODI NOU 
+    (llistat.js linia 248)
+    if((poke_img === null)&&(typeof(poke_img)=="object")){poke_img="media/imatges/fails/imatgeNoDisponible_rodona.png"}
+
+    (llistat.js linia 469)
+    /* Pintem la card ampliada amb HTML */
+    // recuperem els valors qeu ens calen del array ....
+    let poke_img1  = dadesPokemon.sprites.front_default
+    console.log("URL de imatge: ", poke_img1, typeof(poke_img1))
+    if((poke_img1 === null)&&(typeof(poke_img1)=="object")){poke_img1="media/imatges/fails/imatgeNoDisponible_rodona.png"}
+    console.log("URL de imatge tractada:", poke_img1, typeof(poke_img1))
+    let poke_img2  = dadesPokemon.sprites.back_default
+    //console.log("Valor de imatge:", poke_img2, typeof(poke_img2))
+    if((poke_img2 === null)&&(typeof(poke_img2)=="object")){poke_img2="media/imatges/fails/imatgeNoDisponible_rodona.png"}
+    //console.log("Valor de imatge pas2:", poke_img2, typeof(poke_img2))
+
+    (llistat.js linia 723)
+    // recuperem els valors qeu ens calen del array ....
+    let poke_img   = array_pokemons[x].sprites.front_default
+    console.log("Valor de imatge:", poke_img)
+    if(poke_img==null){poke_img=="media/imatges/fails/imatgeNoDiponible_rodona.png"}
+
+    (combat.js linia 231)
+    // Obtenim els valors que em de insertar al codi HTML
+        let poke_URLimgTapa   = "media/imatges/cartes/pokemon_card_backside2.png"
+        let poke_URLimgFront1 = array_pokemons[y].sprites.front_default
+        if((poke_URLimgFront1 === null)&&(typeof(poke_URLimgFront1)=="object")){poke_URLimgFront1="media/imatges/fails/imatgeNoDisponible_rodona.png"}
+        let poke_URLimgFront2 = array_pokemons[y].sprites.back_default
+        if((poke_URLimgFront2 === null)&&(typeof(poke_URLimgFront2)=="object")){poke_URLimgFront2="media/imatges/fails/imatgeNoDisponible_rodona.png"}
+        let poke_id           = array_pokemons[y].id
+
+
+    

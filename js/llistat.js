@@ -244,6 +244,7 @@ async function llistat_configuracioURLSenseParametres(){
     for(let x=0; x<10; x++){
         // recuperem els valors qeu ens calen del array ....
         let poke_img   = array_pokemons[x].sprites.front_default
+        if((poke_img === null)&&(typeof(poke_img)=="object")){poke_img="media/imatges/fails/imatgeNoDisponible_rodona.png"}
         let poke_id    = array_pokemons[x].id
         let poke_nom   = array_pokemons[x].name
         let poke_atk   = array_pokemons[x].stats[1].base_stat
@@ -468,7 +469,13 @@ async function llistat_configuracioURLAmbParametres(){
     /* Pintem la card ampliada amb HTML */
     // recuperem els valors qeu ens calen del array ....
     let poke_img1  = dadesPokemon.sprites.front_default
+    console.log("URL de imatge: ", poke_img1, typeof(poke_img1))
+    if((poke_img1 === null)&&(typeof(poke_img1)=="object")){poke_img1="media/imatges/fails/imatgeNoDisponible_rodona.png"}
+    console.log("URL de imatge tractada:", poke_img1, typeof(poke_img1))
     let poke_img2  = dadesPokemon.sprites.back_default
+    //console.log("Valor de imatge:", poke_img2, typeof(poke_img2))
+    if((poke_img2 === null)&&(typeof(poke_img2)=="object")){poke_img2="media/imatges/fails/imatgeNoDisponible_rodona.png"}
+    //console.log("Valor de imatge pas2:", poke_img2, typeof(poke_img2))
     let poke_id    = dadesPokemon.id
     let poke_nom   = dadesPokemon.name
     let poke_atk   = dadesPokemon.stats[1].base_stat
@@ -715,6 +722,8 @@ async function llistat_configuracioURLSenseParametresAmbRetorn(){
                 
                 // recuperem els valors qeu ens calen del array ....
                 let poke_img   = array_pokemons[x].sprites.front_default
+                console.log("Valor de imatge:", poke_img)
+                if(poke_img==null){poke_img=="media/imatges/fails/imatgeNoDiponible_rodona.png"}
                 let poke_id    = array_pokemons[x].id
                 let poke_nom   = array_pokemons[x].name
                 let poke_atk   = array_pokemons[x].stats[1].base_stat

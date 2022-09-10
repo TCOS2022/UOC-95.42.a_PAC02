@@ -231,7 +231,9 @@ async function combat_initialize(){
         // Obtenim els valors que em de insertar al codi HTML
         let poke_URLimgTapa   = "media/imatges/cartes/pokemon_card_backside2.png"
         let poke_URLimgFront1 = array_pokemons[y].sprites.front_default
+        if((poke_URLimgFront1 === null)&&(typeof(poke_URLimgFront1)=="object")){poke_URLimgFront1="media/imatges/fails/imatgeNoDisponible_rodona.png"}
         let poke_URLimgFront2 = array_pokemons[y].sprites.back_default
+        if((poke_URLimgFront2 === null)&&(typeof(poke_URLimgFront2)=="object")){poke_URLimgFront2="media/imatges/fails/imatgeNoDisponible_rodona.png"}
         let poke_id           = array_pokemons[y].id
         let poke_nom          = array_pokemons[y].name
         let poke_atk          = array_pokemons[y].stats[1].base_stat
