@@ -33,7 +33,7 @@ section.loading{
     /* Definim com volem que siguin les transcicions aplicades */
     transition: all 5s ease;
     /* Li posem un border pq ajusti be quant sigui activada */
-    border: green 5px solid;
+    border: var(--color1) 5px solid;
     border-radius: 25px;
     position:relative; 
     width: 100%;
@@ -44,7 +44,7 @@ section.loading{
     -webkit-transform:rotateY(180deg);
     -moz-transform:rotateY(180deg);
     transform: rotateY(180deg);
-    border: yellow 5px solid;
+    border: var(--color2) 5px solid;
     border-radius: 25px;
 }
 
@@ -53,7 +53,7 @@ section.loading{
     -webkit-transform:rotateY(180deg);
     -moz-transform:rotateY(180deg);
     transform: rotateY(180deg);
-    border: red 5px solid;
+    border: var(--atac) 5px solid;
     border-radius: 25px;
 }
 
@@ -106,8 +106,8 @@ section.combat_resultat{
 }
 
 section.combat_resultat #resultatCombat {
-    color:orange;
-    background-color: blueviolet;
+    color:var(--color3);
+    background-color: var(--color1);
     font-size:25px;
     font-weight: bolder;
     font-style: italic;
