@@ -30,13 +30,8 @@ header ul {
 
 header ul li {display: inline-block;}
 header ul li.li_theme ul li{
-    /* border:1px black solid; */
     padding: 5px;
-    /* background-color: darkgray; */
 }
-
-/* IRENE: He quitado el !important para que los colores no sean definitivos 
-y se puedan adaptar al tema + utilizo las variables*/
 
 header ul li.li_theme ul li.theme_selected {
     background-color: var(--color3); 
@@ -91,24 +86,6 @@ section.llistat{
     padding: 10px;
     margin: 10px;
 }
-
-/* .dades {
-    padding: 40px;
-    font-size: large;
-}
-
-.poke_btnDetalls {
-    text-align: center;
-    background-color: rgb(247, 248, 248);
-    border-radius: 10px;
-    border: 1px solid darkgrey;
-}
-
-.poke_img {
-    background-color:rgb(247, 248, 248);
-    border-radius: 20px;
-} */
-
 
 /* AREA DE DETALL */
 section.detall {display:none}
