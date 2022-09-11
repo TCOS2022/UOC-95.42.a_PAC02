@@ -723,7 +723,7 @@ async function llistat_configuracioURLSenseParametresAmbRetorn(){
                 // recuperem els valors qeu ens calen del array ....
                 let poke_img   = array_pokemons[x].sprites.front_default
                 console.log("Valor de imatge:", poke_img)
-                if(poke_img==null){poke_img=="media/imatges/fails/imatgeNoDiponible_rodona.png"}
+                if((poke_img === null)&&(typeof(poke_img)=="object")){poke_img="media/imatges/fails/imatgeNoDisponible_rodona.png"}
                 let poke_id    = array_pokemons[x].id
                 let poke_nom   = array_pokemons[x].name
                 let poke_atk   = array_pokemons[x].stats[1].base_stat

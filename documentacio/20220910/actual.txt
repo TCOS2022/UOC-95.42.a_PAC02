@@ -70,6 +70,9 @@ SOLVE:
 NOTA: Vaaaaleeee!!!! doncs resulta que "null" es de allo mes lios, pq null==null retorna FALSE!!! .... en les condicionals.
 Despres de mirar una miqueta mes, sembla que la manera menys dolenta es mirar si el seu tipus es in object, per tant haurem
 de modificar els if a:
+
+CONSULTA: https://javascript.plainenglish.io/how-to-check-for-null-in-javascript-dffab64d8ed5
+
     if((variable===null)&&(typeof(variable=="object"))) i quedara aixi:
 
     CODI NOU 
@@ -92,7 +95,7 @@ de modificar els if a:
     // recuperem els valors qeu ens calen del array ....
     let poke_img   = array_pokemons[x].sprites.front_default
     console.log("Valor de imatge:", poke_img)
-    if(poke_img==null){poke_img=="media/imatges/fails/imatgeNoDiponible_rodona.png"}
+    if((poke_img === null)&&(typeof(poke_img)=="object")){poke_img="media/imatges/fails/imatgeNoDisponible_rodona.png"}
 
     (combat.js linia 231)
     // Obtenim els valors que em de insertar al codi HTML
