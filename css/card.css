@@ -24,7 +24,7 @@
 .pokeCard { margin: 23px; border: 2px solid var(--font_color); border-radius: 5px; background-color: var(--color4); box-shadow: 8px 8px 8px 0 var(--color5); }
 .pokeImg, .pokeData, .pokeBtn {height: 33%;position: relative;overflow: hidden;margin: 5px 12px;}
 .pokeImg .pID, .pokeImg .pImg, .pokeImg .pName { width: 100%; }
-.pokeImg .pID { text-align: left; padding-left: 25px; }
+.pokeImg .pID { text-align: center; padding-left: 25px; }
 .pokeImg .pID .pokeId0 { color: var(--font_color); font-weight: bold; }
 .pokeImg .pID .pokeId1 { color: var(--font_color); font-weight: bolder; font-style: italic; }
 .pokeImg .pImg { position: relative; height: 100%; text-align: center; }
