@@ -64,7 +64,9 @@ async function llistat_buscadorInitializer(){
         let array_nomsPokemons=[]
         // NOTA: Em de recuperar de alguna banda els noms dels pokemons actualment llistats, ho podem
         //       fer del codi HTML, per exemple ....
-        let apuntadors = document.querySelectorAll("article.card span.poke_nom")
+        //          class="pokeName1"
+        let apuntadors = document.querySelectorAll("span.pokeName1")
+
         apuntadors.forEach(poke_spanNom => {
             // Recuperem el valor del span
             let nompoke = poke_spanNom.innerHTML
@@ -122,10 +124,10 @@ async function llistat_buscadorInitializer(){
         //       posarem visible/invisible
         // NOTA: Fem un bucle tal qeu mira cada nom en cada element i el compara recorrent un segon
         //       bucle amb els noms triats de la llista, si coincideix, icom el index del nom es el 
-        //       mateix que el de la card, posem el element sencer visible o invisible
-        let elements            = document.querySelectorAll("article.card")
-        let elementsNames       = document.querySelectorAll("article.card span.poke_nom")
-        let elementsNumber      = elements.length
+        //       mateix que el de la card, posem el element sencer visible o invisible class="pokeName1"
+        let elements            = document.querySelectorAll("article")
+        let elementsNames       = document.querySelectorAll("span.pokeName1")
+        let elementsNumber      = elements.length-1
         let pokesVisiblesNumber = array_nomspokemonsVisibles.length
 
         console.log("Total articles a la llista: " + elementsNumber)
@@ -242,6 +244,7 @@ async function llistat_configuracioURLSenseParametres(){
     for(let x=0; x<10; x++){
         // recuperem els valors qeu ens calen del array ....
         let poke_img   = array_pokemons[x].sprites.front_default
+        if((poke_img === null)&&(typeof(poke_img)=="object")){poke_img="media/imatges/fails/imatgeNoDisponible_rodona.png"}
         let poke_id    = array_pokemons[x].id
         let poke_nom   = array_pokemons[x].name
         let poke_atk   = array_pokemons[x].stats[1].base_stat
@@ -342,7 +345,7 @@ async function llistat_configuracioURLSenseParametres(){
         linies = linies + linia
         linia  = `              <div class="pBtn">`
         linies = linies + linia
-        linia  = `                  <span class="pokeBtn0"><a href="llistat.html?pokeID=${poke_id}">MES DADES</a></span>`
+        linia  = `                  <span class="pokeBtn0"><a class="pokeBtn1" href="llistat.html?pokeID=${poke_id}">MES DADES</a></span>`
         linies = linies + linia
         linia  = `              </div>`
         linies = linies + linia
@@ -388,16 +391,19 @@ async function llistat_configuracioURLSenseParametres(){
 
     // Afegirem tambe el event click per anar al detall ... a cada pokemon
     // NOTA: canviem el event click del div al buto de detall !!!!!
-    const targetes = document.querySelectorAll(".card a.poke_btnDetalls")
+    const targetes = document.querySelectorAll("article a")
     const targetesmax = targetes.length
 
     for(let x=0; x<targetesmax; x++){
-        targetes[x].addEventListener("click",function(){
+        targetes[x].addEventListener("click",function(event){
             /* El qeu volem es que al fer click pasi el seguent: 
                     Obtenim el id del pokemon de la card
                     Construim la URL tal qeu inclogui el pokeID
                     Carreguem la pagina amb la nova URL, com que portara un pokeID ja ho gestiona l altre funcio 
             */
+
+            event.preventDefault()
+
             // Obtenim la ID del pokemon, que esta al array_rnd ...
             let pokeID1 = arrayRND[x]
             // Obtenim la url a la que em de anar ....
@@ -463,7 +469,13 @@ async function llistat_configuracioURLAmbParametres(){
     /* Pintem la card ampliada amb HTML */
     // recuperem els valors qeu ens calen del array ....
     let poke_img1  = dadesPokemon.sprites.front_default
+    console.log("URL de imatge: ", poke_img1, typeof(poke_img1))
+    if((poke_img1 === null)&&(typeof(poke_img1)=="object")){poke_img1="media/imatges/fails/imatgeNoDisponible_rodona.png"}
+    console.log("URL de imatge tractada:", poke_img1, typeof(poke_img1))
     let poke_img2  = dadesPokemon.sprites.back_default
+    //console.log("Valor de imatge:", poke_img2, typeof(poke_img2))
+    if((poke_img2 === null)&&(typeof(poke_img2)=="object")){poke_img2="media/imatges/fails/imatgeNoDisponible_rodona.png"}
+    //console.log("Valor de imatge pas2:", poke_img2, typeof(poke_img2))
     let poke_id    = dadesPokemon.id
     let poke_nom   = dadesPokemon.name
     let poke_atk   = dadesPokemon.stats[1].base_stat
@@ -620,6 +632,8 @@ async function llistat_configuracioURLAmbParametres(){
         document.querySelector("section.detall").style.display="block";
         // Desactivem section LOADING 
         document.querySelector("section.loading").style.display="none";
+        // Desactivem section FILTER
+        // document.querySelector("section.filter").style.display="none"
     }, 2000);
 }
 
@@ -660,16 +674,22 @@ async function llistat_configuracioURLSenseParametresAmbRetorn(){
     /* Definim les variables locals */
         let lsKey = "UOCPACK02POKEDEX_ARRAYRND"  // Definim la key que farem servir guardar/llegir per el arrayRND
     
+        // mirem quin valor te actualment la key:
+        console.log("Check si tenim alguna cosa al localStorage amb la clau [" + lsKey +"]")
+        console.log(LS_Read(lsKey))
+
     /* Definim calculs i processos */
-        // Mirem si tenim aquesta keyal LS ... 
+        // Mirem si tenim aquesta key al LS ... 
         // NOTA: posem el valor amb ! pq la instruccio del cas 'NO' es mes curta i no caldra anar a buscarla al final de tot el codi
         if(!LS_Check(lsKey)){
             /* NO, no hi ha pas key i procedim com em decidit .... executem la versio simplificada */
-            console.log(`NO tenim key [${lsKey}] al localStoarge`)
+            console.log(`NO tenim key [${lsKey}] al localStorage`)
+            console.log("Funcio actual: llistat configuracio URL Sense Parametres")
             llistat_configuracioURLSenseParametres()
         }else{
             /* SI, tenim la key i procedim doncs... */
             // Indicarem en quina funcio anem funcionant ...
+            console.log(`SI tenim key [${lsKey}] al localStorage`)
             console.log("Funcio actual: llistat configuracio URL Sense Parametres Amb Retorn")
             
             // ***************************************************************************************
@@ -702,6 +722,8 @@ async function llistat_configuracioURLSenseParametresAmbRetorn(){
                 
                 // recuperem els valors qeu ens calen del array ....
                 let poke_img   = array_pokemons[x].sprites.front_default
+                console.log("Valor de imatge:", poke_img)
+                if((poke_img === null)&&(typeof(poke_img)=="object")){poke_img="media/imatges/fails/imatgeNoDisponible_rodona.png"}
                 let poke_id    = array_pokemons[x].id
                 let poke_nom   = array_pokemons[x].name
                 let poke_atk   = array_pokemons[x].stats[1].base_stat
@@ -733,70 +755,87 @@ async function llistat_configuracioURLSenseParametresAmbRetorn(){
                 linia = ""
                 linies = ""
                 // Fem les linies del codi nou de HTML ....
-                linia  = '<article class="pokeCard">'
+                linia  = '<div class="pokeContainer">'
                 linies = linies + linia
-                linia  = `  <div class="pokeImg">`
+        
+                linia  = '  <article class="pokeCard">'
                 linies = linies + linia
-                linia  = `    <div class="pID">`
+        
+                /*
+                linia  = '      <div class="poke_tapa">'
                 linies = linies + linia
-                linia  = `        <span class="pokeId0">ID</span>`
+                linia  = '      </div>'
                 linies = linies + linia
-                linia  = `        <span class="pokeId1">${poke_id} </span>`
+                */
+        
+                linia  = '      <div class="poke_contingut">'
                 linies = linies + linia
-                linia  = `    </div>`
+                linia  = `          <div class="pokeImg">`
                 linies = linies + linia
-                linia  = `    <div class="pImg">`
+                linia  = `              <div class="pID">`
                 linies = linies + linia
-                linia  = `        <img src="${poke_img}" alt="">`
+                linia  = `                  <span class="pokeId0">ID</span>`
                 linies = linies + linia
-                linia  = `    </div>`
+                linia  = `                  <span class="pokeId1">${poke_id} </span>`
                 linies = linies + linia
-                linia  = `    <div class="pName">`
+                linia  = `              </div>`
                 linies = linies + linia
-                linia  = `        <span class="pokeName0">NOM:</span>`
+                linia  = `              <div class="pImg">`
                 linies = linies + linia
-                linia  = `        <span class="pokeName1">${poke_nom}</span>`
+                linia  = `                  <img src="${poke_img}" alt="">`
                 linies = linies + linia
-                linia  = `    </div>`
+                linia  = `              </div>`
                 linies = linies + linia
-                linia  = `  </div>`
+                linia  = `              <div class="pName">`
                 linies = linies + linia
-                linia  = `  <div class="pokeData">`
+                linia  = `                  <span class="pokeName0">NOM:</span>`
                 linies = linies + linia
-                linia  = `    <div class="pAtk">`
+                linia  = `                  <span class="pokeName1">${poke_nom}</span>`
                 linies = linies + linia
-                linia  = `        <span class="pokeAtk0">Atac</span><br>`
+                linia  = `              </div>`
                 linies = linies + linia
-                linia  = `        <span class="pokeAtk1">[${poke_atk}]</span>`
+                linia  = `          </div>`
                 linies = linies + linia
-                linia  = `    </div>`
+                linia  = `          <div class="pokeData">`
                 linies = linies + linia
-
-                linia  = `    <!--`
-                linia  = `    <div class="pCuadrat"></div>`
-                linia  = `    -->`
-
-                linia  = `    <div class="pDef">`
+                linia  = `              <div class="pAtk">`
                 linies = linies + linia
-                linia  = `        <span class="pokeDef0">Defensa</span><br>`
+                linia  = `                  <span class="pokeAtk0">Atac</span><br>`
                 linies = linies + linia
-                linia  = `        <span class="pokeDef1">[${poke_def}]</span>`
+                linia  = `                  <span class="pokeAtk1">[${poke_atk}]</span>`
                 linies = linies + linia
-                linia  = `    </div>`
+                linia  = `              </div>`
                 linies = linies + linia
-                linia  = `  </div>`
+                
+                linia  = `              <!--`
+                linia  = `              <div class="pCuadrat"></div>`
+                linia  = `              -->`
+                
+                linia  = `              <div class="pDef">`
                 linies = linies + linia
-                linia  = `  <div class="pokeBtn">`
+                linia  = `                  <span class="pokeDef0">Defensa</span><br>`
                 linies = linies + linia
-                linia  = `    <div class="pBtn">`
+                linia  = `                  <span class="pokeDef1">[${poke_def}]</span>`
                 linies = linies + linia
-                linia  = `        <span class="pokeBtn0"><a href="llistat.html?pokeID=${poke_id}">MES DADES</a></span>`
+                linia  = `              </div>`
                 linies = linies + linia
-                linia  = `    </div>`
+                linia  = `          </div>`
                 linies = linies + linia
-                linia  = `  </div>`
+                linia  = `          <div class="pokeBtn">`
                 linies = linies + linia
-                linia  = `</article>`
+                linia  = `              <div class="pBtn">`
+                linies = linies + linia
+                linia  = `                  <span class="pokeBtn0"><a class="pokeBtn1" href="llistat.html?pokeID=${poke_id}">MES DADES</a></span>`
+                linies = linies + linia
+                linia  = `              </div>`
+                linies = linies + linia
+                linia  = `          </div>`
+                linies = linies + linia
+                linia  = `      </div>` // /div .poke_contingut
+                linies = linies + linia
+                linia  = `  </article>`
+                linies = linies + linia
+                linia  = `</div>` // /div .pokeContainer
                 linies = linies + linia
 
                 //  i les afegim al array de articles ....
@@ -814,11 +853,12 @@ async function llistat_configuracioURLSenseParametresAmbRetorn(){
             
             // Afegirem tambe el event click per anar al detall ... a cada pokemon
             // NOTA: canviem el event click del div al buto de detall !!!!!
-            const targetes = document.querySelectorAll(".card a.poke_btnDetalls")
+            // codi vell const targetes = document.querySelectorAll(".card a.poke_btnDetalls")
+            const targetes = document.querySelectorAll("article a")
             const targetesmax = targetes.length
-            
+
             for(let x=0; x<targetesmax; x++){
-                targetes[x].addEventListener("click",function(){
+                targetes[x].addEventListener("click",function(e){
                     /* El qeu volem es que al fer click pasi el seguent: 
                             Obtenim el id del pokemon de la card
                             Construim la URL tal qeu inclogui el pokeID
@@ -831,7 +871,7 @@ async function llistat_configuracioURLSenseParametresAmbRetorn(){
 
                     // ***************************************************************************************
                     // ***************************************************************************************
-                    // Aqui afegim la part del localStorage, tal qeu quant fem click es guardi el arrayRND i es pugui reuperar el llistat actual
+                    // Aqui afegim la part del localStorage, tal que quant fem click es guardi el arrayRND i es pugui reuperar el llistat actual
                     // LS_Create(lsKey) // NOTA: NO cal pq es fa directaemtn amb la funcio de UPDATE
                     console.log(`Guardant al localStorage [${arrayRND}] => [${lsKey}`)
                     LS_Update(lsKey,JSON.stringify(arrayRND))
@@ -849,7 +889,7 @@ async function llistat_configuracioURLSenseParametresAmbRetorn(){
             setTimeout(function(){
                 console.log("i ara canviem els displays ...")
                 // Activem    section FILTRE
-                document.querySelector("section.buscador").style.display="flex";
+                document.querySelector("section.buscador").style.display="none";
                 // Activem    section LLISTAT
                 document.querySelector("section.llistat").style.display="flex";
                 // Desactivem section DETALL

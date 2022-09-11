@@ -1,0 +1,78 @@
+Alguns canvis estructurals ....
+    1) Afegim el ... ¡¡¡TITOL!!! (plantilla.html, llistat.html, combat.html)
+        CODI VELL
+            <body>
+                <div class="container">
+                    <header>
+                        <nav>
+                            <ul>
+                            </ul>
+                        </nav>
+                    </header>
+
+        CODI NOU (linia 25)
+            <div class="container">
+                <header>
+                    <div class="title">
+                        <h1>MAQUINA POKEDEX V2.0</h1>
+                    </div>
+                    <nav>
+                        <ul>
+                        </ul>
+                    </nav>
+                </header>
+
+Alguns canvis de CSS3
+    1) Afegim valors temporals al titol (general.css)
+        CODI NOU: (linia 29+)
+            /* TITOL */
+            .title{
+                text-align: center;
+                padding: 10px;
+                width: 80%;
+                border: 5px solid yellow;
+                border-radius: 5px;
+                margin: 0 auto 20px auto;
+            }
+
+    2) Afegim valors temporals al container principal (general.css)
+        CODI NOU: (linia 17+)
+        /* CONTENIDOR PRINCIPAL */
+            div.container{
+                position: relative;
+                width: 85%;
+                margin: auto;
+                margin-top: 20px;
+                padding: 25px;
+                background-color: darkgray;
+                border: 10px blue solid;
+                border-radius: 20px;
+            }
+
+    3) Afegim separacio entre els dos "li" de la barra de navegacio (general.css)
+        CODI VELL:
+            /* AREA DE NAVEGACIO */
+            header ul {
+                list-style: none;
+            }
+
+        CODI NOU: 
+            header ul {
+                list-style: none;
+                display:flex;
+                justify-content: space-between;
+            }
+
+    4) Afegim control a la llista de cards pq "no surtin de passeig" i quedin dintre del seu contenidor (llistat_jordi.css / cambat1.css)
+        CODI VELL
+            /* AREA DE LLISTAT */
+            section.llistat {display:none;}
+        CODI NOU
+            /* AREA DE LLISTAT */
+            section.llistat {display:none;flex-wrap:wrap}
+            .combat_llistat{display:flex;flex-wrap: wrap;}
+
+Alguns canvis pendents al JS
+    1) Fer que no es vegi el "filtratge" a "llistat" al carregar la pagina, despres SI!
+        section.buscador {display:none}
+    2) Fer que no es vegi el "filtratge" a "detall"

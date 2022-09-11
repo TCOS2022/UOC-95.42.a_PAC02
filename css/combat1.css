@@ -1,3 +1,12 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    line-height: 25px;
+}
+
+
 /* ****************************************************************** */
 /* DEVELOPPING */
 /*
@@ -6,6 +15,42 @@ section {border: red 2px dotted}
 */
 
 /* ****************************************************************** */
+/* ASIGNACIO DELS COLORS SEGONS EL TEMA */
+body {
+    background-color: var(--bg_color);
+    color: var(--font_color);
+}
+
+
+/* AREA DE NAVEGACIO */
+header ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+header ul li {display: inline-block;}
+header ul li.li_theme ul li{
+    /* border:1px black solid; */
+    padding: 5px;
+    /* background-color: darkgray; */
+}
+
+/* IRENE: He quitado el !important para que los colores no sean definitivos 
+y se puedan adaptar al tema + utilizo las variables*/
+
+header ul li.li_theme ul li.theme_selected {
+    background-color: var(--color3); 
+    color:var(--font_color);
+    font-size: 125% rem;
+    font-weight: bolder;
+}
+
+header ul li.li_theme ul li:hover {
+    background-color: var(--color3);
+    color: var(--font_color);
+}
+
 /* AREA DE LOADING */
 section.loading{
     display:block
@@ -14,18 +59,26 @@ section.loading{
 /* ********************************************************************* */
 /* AREA DE LLISTAT DE CARTES */
 /* ********* VERSIO JORDI. PROVA DE CONCEPTE 20220906 - INICI - ******** */
+.combat_llistat{display:flex;flex-wrap: wrap;}
+
 .combat_llistat .pokeContainer{
     /* Afegim valor de perspectiva 3D al contenidor de la carta */
     -webkit-perspective:800;
     -moz-perspective:800;
     perspective: 800;
-    display:flex;
-    width: 250px;
-    margin: 10px
+    display:
+    flex;
+    width: 242px;
+    margin: 1px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .combat_llistat .pokeContainer .pokeCard{
-    position:relative;
+    position:
+    relative;
     /* Afegim la gestio heredada dels efectes 3D */
     -moz-transform-style:preserve-3d;
     -webkit-transform-style:preserve-3d;
@@ -33,9 +86,10 @@ section.loading{
     /* Definim com volem que siguin les transcicions aplicades */
     transition: all 5s ease;
     /* Li posem un border pq ajusti be quant sigui activada */
-    border: green 5px solid;
-    border-radius: 25px;
-    position:relative; 
+    border: green 1px solid;
+    border-radius: 15px;
+    position:
+    relative;
     width: 100%;
 }
 
@@ -70,11 +124,11 @@ section.loading{
     transform-style: preserve-3d;
 }
 
-.combat_llistat .pokeContainer .pokeCard .poke_tapa{position:relative; width: 100%;}
+.combat_llistat .pokeContainer .pokeCard .poke_tapa{position:relative; width: 95%;}
 .combat_llistat .pokeContainer .pokeCard .poke_tapa img{
     position:relative;
-    width: 240px;
-    height: 420px;
+    width: 200px;
+    height: 309px;
 }
 
 .combat_llistat .pokeContainer .poke_contingut{
@@ -106,8 +160,8 @@ section.combat_resultat{
 }
 
 section.combat_resultat #resultatCombat {
-    color:orange;
-    background-color: blueviolet;
+    color:rgb(239, 236, 231);
+    background-color: rgb(82, 79, 85);
     font-size:25px;
     font-weight: bolder;
     font-style: italic;

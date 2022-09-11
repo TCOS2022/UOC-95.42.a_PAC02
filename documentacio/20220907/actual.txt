@@ -1,0 +1,78 @@
+Coses que calia arreglar:
+
+1/ FAIL: No funciona el filtrador.
+   SOLVE: estava apuntant a elements que s'han canviat de nom/clase, repasant el codi veiem:
+
+    CODI VELL (llistat.js)
+    linia 068
+            let apuntadors = document.querySelectorAll("span.nom_poke")
+    linia 128
+            let elements            = document.querySelectorAll("article.card")
+            let elementsNames       = document.querySelectorAll("span.nom_poke")
+    linia 130
+            let elementsNumber      = elements.length
+
+    CODI NOU (llistat.js)
+    linia 068
+            let apuntadors = document.querySelectorAll("span.pokeName1")
+    linia 128
+            let elements            = document.querySelectorAll("article")
+            let elementsNames       = document.querySelectorAll("span.pokeName1")
+    linia 130
+            let elementsNumber      = elements.length-1
+
+2/ FAIL: El filtre te poca visibilitat
+   SOLVE: Afegim una mica de CSS3 que no en tenia cap
+
+    CODI VELL (llistat_jordi.css)
+        /* AREA DE BUSCADOR */
+
+    CODI NOU (llistat_jordi.css)
+        /* AREA DE BUSCADOR */
+        section.buscador {display:flex}
+        section.buscador {
+            margin: 10px 0;
+            padding: 20px;
+            color: black;
+            background-color: grey;
+        }
+
+3/ FAIL: No retorna al llistat original desde el detall
+   SOLVE: en estudi .... segurament pel canvi de clases i reformateig del codi html de la card ....
+
+    CODI VELL (llistat.js)
+    linia 823
+        const targetes = document.querySelectorAll(".card a.poke_btnDetalls")
+
+    CODI NOU (llistat.js)
+    linia 823
+        const targetes = document.querySelectorAll("article .pokeBtn0 a")
+
+  SOLVE: Sembla que el problema es que per alguna rao, no es guarda el llistat/array generat ABANS de saltar al detall
+
+  SOLVE: vale! ja em trobat el problema, de fet 2 problemes ...
+    a) A "configuracioURLAmbParametres" tenim malament la seguent asignacio amb el nom antic de clase
+        CODI VELL (llistat.js)
+        CODI NOU (llistat.js)
+        linia 343
+            const targetes = document.querySelectorAll("article a")
+
+    b) A "configuracioURLAmbparametresAmbRetorn" la estructura esta malament!!!! falten nivells de contenidors 
+    La estructura ha de incloure:
+
+    CODI VELL (llistat.js)
+    linia 748
+    // Fem les linies del codi nou de HTML ....
+                linia  = '<article class="pokeCard">'
+                linia  = `  <div class="pokeImg">`
+                linia  = `    <div class="pID">`
+
+    CODI NOU
+            pokeContainer
+                pokeCard
+                    poke_tapa
+                    poke_contingut
+                        pokeImg
+                            pID
+                                pokeId0
+                                pokeId1
