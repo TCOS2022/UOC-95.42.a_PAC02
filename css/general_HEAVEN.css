@@ -1,0 +1,17 @@
+/* ***************************************** */
+/* Arxiu CSS que es configura pel tema HEAVEN */
+/* ***************************************** */
+
+:root{
+    --bg_color: rgb(250,250,250);
+    --font_color: rgb(37, 44, 67);
+    --font-type: arial;
+
+    --color1: #a8ceed;
+    --color2: #eef5f6;
+    --color3:#c8dfe0;
+    --color4:#badcdf;
+    --color5:#51819f;
+    --atac: rgb(236, 176, 176);
+    --defensa: rgb(120, 193, 190);
+}
