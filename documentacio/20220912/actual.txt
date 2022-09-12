@@ -1,0 +1,58 @@
+Modificacions finals de CSS (copiem els nous arxius de la branca alternativa a sobre dels vells de master)
+    arxius css vells -> css/old_master
+    arxius css nous  -> css/
+
+Afectacions:
+1) Seccio navegacio. Separar links dels enllaços de llistat i combat
+    CODI VELL
+    CODI NOU
+
+2) Seccio navegacio. Deixar sols temes LIGHT i DARK
+    NOTA: En comptes de comentar-los al html de llistat.html i combat.html, els podem desactivar desde css.
+          Com son els boto nº 1 i nº 4 (ultim) ..... lis fem el selector apropiat i els apaguem
+    CODI VELL
+    CODI NOU
+        (general.css linies 69+)
+        header ul li.li_theme ul li:first-child{display:none !important}
+        header ul li.li_theme ul li:last-child{display:none !important}
+
+3) General: noves definicions de formes i colors pels temes i els seus elements.
+    CODI VELL
+    CODI NOU
+
+4) Desactivem el hover a combat.
+    CODI VELL
+        (combat.css linia 36)
+        section.combat_llistat div.pokeContainer article.pokeCard:hover {
+            /* Afegim el efecte de rotacio de la carta (amb les dues imatges: frontal i posterior) quant fem hover */
+                -webkit-transform:rotateY(179.9deg);
+                -moz-transform:rotateY(179.9deg);
+                transform: rotateY(179.9deg);
+                border: yellow 5px solid;
+                border-radius: 25px;
+        }
+
+        (combat1.css linia 96)
+        .combat_llistat .pokeContainer .pokeCard:hover {
+            // Afegim el efecte de rotacio de la carta (amb les dues imatges: frontal i posterior) quant fem hover
+            -webkit-transform:rotateY(180deg);
+            -moz-transform:rotateY(180deg);
+            transform: rotateY(180deg);
+            border: yellow 5px solid;
+            border-radius: 25px;
+        }
+
+    CODI NOU
+        /* simplement comentem el codi de la linia 36+ */
+        /* simplement comentem el codi de la linia 91+ */
+
+5) Centrat dels elements de la card a combat
+    CODI VELL
+    CODI NOU
+
+6) canviem tambe el gif del loading 
+    NOTA: Renombrem la animacio antiga a loading_v2_old.gif, ja que la nova es diu igual
+
+7) moure plantilla_jordi.html a documentacio/20220910, ja que era un test a veure com quedaven posar els links amb imatges
+
+8) renombrar carpeta "logos and titles" a "logos_and_titles" i actualitzar links a plantilla.html/plantilla_jordi.html

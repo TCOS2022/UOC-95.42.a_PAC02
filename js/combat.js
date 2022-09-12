@@ -136,9 +136,8 @@ function combat_combat(id_defensor,arrayPokemons){
     /* Pintem el resultat en codi HTML .... */
     /* Mostrem el resultat */
     console.log("El resultat del combat es: ",resultatCombat)
-    document.querySelector("section.combat_resultat").style.display="block"
+    document.querySelector("section.combat_resultat").style.display = "block"
     document.querySelector("section.combat_resultat").innerHTML=resultatCombat
-
 }
 
 async function combat_initialize(){

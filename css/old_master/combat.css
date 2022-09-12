@@ -33,16 +33,14 @@ section.combat_llistat div.pokeContainer article.pokeCard {
     border-radius: 25px;
 }
 
-/*
 section.combat_llistat div.pokeContainer article.pokeCard:hover {
-    // Afegim el efecte de rotacio de la carta (amb les dues imatges: frontal i posterior) quant fem hover 
+    /* Afegim el efecte de rotacio de la carta (amb les dues imatges: frontal i posterior) quant fem hover */
     -webkit-transform:rotateY(179.9deg);
     -moz-transform:rotateY(179.9deg);
     transform: rotateY(179.9deg);
     border: yellow 5px solid;
     border-radius: 25px;
 }
-*/
 
 section.combat_llistat div.pokeContainer article.pokeCard.activada {
     /* Afegim el efecte de rotacio de la carta (amb les dues imatges: frontal i posterior) quant fem click */

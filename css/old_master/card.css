@@ -1,0 +1,324 @@
+/* ARTICLE (es de la clase .pokeCard)
+Recordem la estructura HTML que em recreat ....
+
+    section.llistat {}
+    section.llistat div.cardContainer {}
+    section.llistat div.cardContainer article.pokeCard {}
+    section.llistat div.cardContainer article.pokeCard:hover {}
+    section.llistat div.cardContainer article.pokeCard.activada {}
+    section.llistat div.cardContainer article.pokeCard div.poke_tapa {}
+    section.llistat div.cardContainer article.pokeCard div.poke_tapa img {}
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut {}
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg pID
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg pID pokeID0
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg pID pokeID1
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg pImg
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg pImg img (x1 o x2)
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg pName
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg pName pokeName0
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg pName pokename1
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeData
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeData pAtk 
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeData pAtk pokeAtk0
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeData pAtk pokeAtk1
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeData pDef
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeData pDef pokeDef0
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut pokeData pDef pokeDef1
+    
+    section.llistat div.cardContainer article.pokeCard div.poke_contingut .pokeTypes .pTypes .pokeType1 (detall))
+
+    section.llistat div.cardContainer article.pokeCard div.pokeBtn
+    section.llistat div.cardContainer article.pokeCard div.pokeBtn div.pBtn
+    section.llistat div.cardContainer article.pokeCard div.pokeBtn div pBtn span.pokeBtn0
+    section.llistat div.cardContainer article.pokeCard div.pokeBtn pBtn span.pokeBtn0 a.pBtnpokeBtn1
+
+
+Deixo aqui tota la estructura de clases de la part de combat ....
+
+    section.combat_llistat {}
+    section.combat_llistat div.cardContainer {}
+    section.combat_llistat div.cardContainer article.pokeCard {}
+    section.combat_llistat div.cardContainer article.pokeCard:hover {}
+    section.combat_llistat div.cardContainer article.pokeCard.activada {}
+    section.combat_llistat div.cardContainer article.pokeCard div.poke_tapa {}
+    section.combat_llistat div.cardContainer article.pokeCard div.poke_tapa img {}
+    section.combat_llistat div.cardContainer article.pokeCard div.poke_contingut {}
+    section.combat_llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg
+    section.combat_llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg pID
+    section.combat_llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg pID pokeID0
+    section.combat_llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg pID pokeID1
+    section.combat_llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg pImg
+    section.combat_llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg pImg img (x1 o x2)
+    section.combat_llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg pName
+    section.combat_llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg pName pokeName0
+    section.combat_llistat div.cardContainer article.pokeCard div.poke_contingut pokeImg pName pokename1
+    section.combat_llistat div.cardContainer article.pokeCard div.poke_contingut pokeData
+    section.combat_llistat div.cardContainer article.pokeCard div.poke_contingut pokeData pAtk 
+    section.combat_llistat div.cardContainer article.pokeCard div.poke_contingut pokeData pAtk pokeAtk0
+    section.combat_llistat div.cardContainer article.pokeCard div.poke_contingut pokeData pAtk pokeAtk1
+    section.combat_llistat div.cardContainer article.pokeCard div.poke_contingut pokeData pDef
+    section.combat_llistat div.cardContainer article.pokeCard div.poke_contingut pokeData pDef pokeDef0
+    section.combat_llistat div.cardContainer article.pokeCard div.poke_contingut pokeData pDef pokeDef1
+    section.combat_llistat div.cardContainer article.pokeCard div.pokeBtn
+    section.combat_llistat div.cardContainer article.pokeCard div.pokeBtn div.pBtn
+    section.combat_llistat div.cardContainer article.pokeCard div.pokeBtn div pBtn span.pokeBtn0
+    section.combat_llistat div.cardContainer article.pokeCard div.pokeBtn div.pBtn span.pokeBtn0 a.pBtnpokeBtn1
+
+*/
+
+
+/* ********* VERSIO JORDI. PROVA DE CONCEPTE 20220906 - INICI - ******** */
+
+
+/* PAGINA LLISTAT */
+
+/* Definim paremetres del article */
+.pokeCard{
+    position:relative;
+    width: min-content;
+    border: 5px solid;
+    /* border: orange; */
+    border-radius: 10%;
+    /* background-color: orchid;*/
+}
+
+.pokeImg, .pokeData, .pokeBtn {
+    /* DEVELOPPING 
+    border: blue 2px dotted; 
+    */
+    height: 33%; 
+    position:relative;
+    overflow: hidden;
+    margin: 5px 0px}
+
+.pokeImg .pID, .pokeImg .pImg, .pokeImg .pName{width: 100%;}
+
+.pokeImg .pID {
+    text-align: left;
+    padding: 10px;
+}
+
+.pokeImg .pID .pokeId0{
+    background-color: blue;
+    color: aqua;
+    font-weight: bolder;
+}
+
+.pokeImg .pID .pokeId1{
+    background-color: aqua;
+    color: blue;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.pokeImg .pImg {
+    position:relative;
+    height: 100%;
+    text-align: center;
+}
+
+.pokeImg .pImg img {
+    width:max-content;
+    position:relative; 
+    border: 10px solid;
+    /*border: black;*/
+    border-radius: 50%;
+    /* background-color: white;*/
+    width: 90%; 
+    padding: 10px;
+}
+
+.pokeImg .pImg img.parella{
+    display:inline-block; 
+    width:45%
+}
+
+.pokeImg .pName{
+    text-align: right;
+    padding-right: 10px;
+}
+.pokeImg .pName .pokeName0{
+    background-color: blue;
+    color: aqua;
+    font-weight: bolder;
+}
+.pokeImg .pName .pokeName1{
+    background-color: aqua;
+    color: blue;
+    font-weight: normal;
+    font-style: italic; 
+    text-transform: capitalize;
+}
+
+
+.pokeData{
+    position: relative;
+    height: 50%; 
+    display:flex; 
+    justify-content: space-around; 
+    margin:10px 0px;
+}
+/*
+.pokeData .pCuadrat{width: 33%; position: relative; border:solid 2px red; height: 33%;}
+*/
+.pokeData span{text-align: center;}
+
+.pokeData .pAtk, .pokeData .pDef{
+    border: 5px solid black;
+    background-color: lightseagreen;
+    border-radius: 50%;
+    width: 45%;
+    padding: 25px;
+}
+
+.pokeData .pAtk{background-color: red; color:blue;}
+.pokedata .pDef{background-color: green; color:blue}
+
+.pokeData .pAtk .pokeAtk1{background-color: blue;color: green;font-weight: bolder;}
+.pokeData .pDef .pokeDef0{background-color: blue;color: red;font-weight: bolder}
+
+.pokeBtn .pBtn {
+    display: block;
+    margin:10px 50px; 
+    padding: 5px; 
+    background-color: grey;
+    border:2px solid black;
+    border-radius:5px
+}
+
+.pokeTypes{
+    /* es el equivalent pokebtn .... */
+    display:block;
+    width: 75%;
+    text-align: center;
+    padding: 10px;
+    background-color: lightgray;
+    border: 5px solid black;
+    margin:auto
+}
+
+.pokeTypes .pTypes{
+    /* es el contenidor repetit per cada type */
+    display:block;
+    padding: 10px;
+    border: 2px black solid;
+    text-align: center;
+    width: 100%;
+    margin:auto
+}
+.pokeTypes .pTypes .pokeType1{
+    /* Es el text amb el typeCode que te cada pokemon */
+    color: blue;
+    background-color: lightblue;
+}
+
+
+
+
+
+/* ********* VERSIO IRENE. INTRODUCCIÓ DE LES VARIABLES SEGÚN EL TEMA - ******** */
+
+/* CARTES PAGINA LLISTAT */
+
+/* Definim paremetres del article */
+.pokeCard{
+    margin:8px;
+    border: 2px solid var(--font_color);
+    border-radius:5px;
+    background-color: var(--color4);
+    box-shadow: 8px 8px 8px 0 var(--color5);
+}
+
+.pokeImg, .pokeData, .pokeBtn {
+    /* DEVELOPPING 
+    border: blue 2px dotted;*/
+    height: 33%; 
+    position:relative;
+    overflow: hidden;
+    margin: 5px 0px}
+
+.pokeImg .pID, .pokeImg .pImg, .pokeImg .pName{width: 100%;}
+
+.pokeImg .pID {background-color: var(--color3);text-align: left;padding: 3px;}
+.pokeImg .pID .pokeId0{background-color: transparent;color: var(--font_color);font-weight: bold;}
+.pokeImg .pID .pokeId1{background-color: transparent;color: var(--font_color);font-weight: bolder;font-style: italic;}
+
+.pokeImg .pImg {position:relative;height: 100%;text-align: center;}
+.pokeImg .pImg img{width:max-content;position:relative; border: 10px solid var(--bg_color); border-radius: 50%;background-color: var(--color2); width: 90%; padding: 10px}
+
+.pokeImg .pImg img.parella{display:inline-block; width:45%}
+
+.pokeImg .pName{text-align: right;padding-right: 10px;}
+.pokeImg .pName .pokeName0{background-color: transparent;color: var(--font_color);font-weight: bolder;}
+.pokeImg .pName .pokeName1{background-color: transparent;color: var(--font_color);font-weight: bold;font-style: italic; text-transform: capitalize;}
+
+
+.pokeData{
+    position: relative;
+    height: 50%; 
+    display:flex; 
+    justify-content: space-around; 
+    margin:10px 0px;
+}
+/*
+.pokeData .pCuadrat{width: 33%; position: relative; border:solid 2px red; height: 33%;}
+*/
+.pokeData span{text-align: center;}
+
+.pokeData .pAtk, .pokeData .pDef{
+    border: 2px solid var(--color2);
+    background-color: var(--defensa);
+    border-radius: 10%;
+    width: 45%;
+    padding: 2px;
+    text-align: center;
+}
+
+.pokeData .pAtk{background-color: var(--atac); color:var(--font_color)}
+.pokedata .pDef{background-color: var(--defensa); color:var(--font_color); font-weight: bolder;}
+
+.pokeData .pAtk .pokeAtk1{background-color: transparent;color: var(--font_color);font-weight: bolder;}
+.pokeData .pDef .pokeDef1{background-color: transparent;color: var(--font_color); font-weight: bolder;}
+
+.pokeBtn .pBtn {
+    display: block;
+    margin:10px 50px; 
+    padding: 5px; 
+    background-color: var(--color2);
+    border: 2px solid var(--color3);
+    border-radius: 10px;
+}
+
+.pokeBtn .pBtn:hover {
+    border-color: var(--color1);
+    color: var(--color1);
+    font-weight: bold;
+}
+
+.pokeTypes{
+    /* es el equivalent pokebtn .... */
+    display:block;
+    width: 75%;
+    text-align: center;
+    padding: 10px;
+    background-color: var(--color2);
+    border: 5px solid var(--font_color);
+    margin:auto;
+}
+
+.pokeTypes .pTypes{
+    /* es el contenidor repetit per cada type */
+    display:block;
+    padding: 10px;
+    border: 2px var(--font_color);
+    text-align: center;
+    width: 100%;
+    margin:auto;
+}
+.pokeTypes .pTypes .pokeType1{
+    /* Es el text amb el typeCode que te cada pokemon */
+    color: var(--color1);
+    font-size: xx-large;
+    font-weight: bolder;    
+}
