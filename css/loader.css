@@ -1,0 +1,39 @@
+/* PLANTILLA HTML PER LOADING
+<section class="loading">
+    <div class="loader">
+    </div>
+    <div>
+        <h2>LOADING FROM API</h2>
+        <h3>Please wait!!!</h3>
+    </div>
+</section> */
+
+
+.loader {
+    border: 16px solid var(--color1);
+    border-top: 16px solid var(--color2);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  section.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+
+  h1 {
+    padding: 10px;
+  }
+
+  h2 {
+    padding: 10px;
+  }
