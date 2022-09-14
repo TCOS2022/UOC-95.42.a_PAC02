@@ -30,13 +30,8 @@ header ul {
 
 header ul li {display: inline-block;}
 header ul li.li_theme ul li{
-    /* border:1px black solid; */
     padding: 5px;
-    /* background-color: darkgray; */
 }
-
-/* IRENE: He quitado el !important para que los colores no sean definitivos 
-y se puedan adaptar al tema + utilizo las variables*/
 
 header ul li.li_theme ul li.theme_selected {
     background-color: var(--color4); 
