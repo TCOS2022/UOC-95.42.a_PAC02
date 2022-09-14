@@ -21,8 +21,8 @@ div.container{
     margin: auto;
     margin-top: 20px;
     padding: 25px;
-    background-color: darkgray;
-    border: 10px #e6e6ed solid;
+    border:3px var(--color1) solid;
+    background-color: var(--color2);
     border-radius: 20px;
 }
 
@@ -32,7 +32,7 @@ div.container{
     text-align: center;
     padding: 10px;
     width: 80%;
-    border: 5px solid #e1e1d3;
+    border: 5px solid var(--color1);
     border-radius: 5px;
     margin: 0 auto 20px auto;
 }
@@ -43,6 +43,7 @@ header ul {
     list-style: none;
     display:flex;
     justify-content: space-between;
+    margin: 10px;
 }
 
 header ul li {display: inline-block;}
@@ -76,6 +77,6 @@ a {
 
 /* AREA DE BUSCADOR */
 section.buscador {
-    background-color: #73848d;
+    background-color: var(--color1);
     color: var(--color2);
 }
