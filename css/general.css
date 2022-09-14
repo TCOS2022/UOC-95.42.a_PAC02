@@ -51,19 +51,19 @@ header ul li.li_nav ul li{margin-right: 20px;}   /*Añadido margin para separar 
 
 header ul li.li_theme ul li{
     border:1px var(--font_color) solid;
-    background-color: var(--color4);
+    background-color: var(--color3);
     padding: 5px;
 }
 
 header ul li.li_theme ul li.theme_selected {
-    background-color: var(--color3); 
+    background-color: var(--color4); 
     color:var(--font_color);
     font-size: 1.25 rem !important;
     font-weight: bolder;
 }
 
 header ul li.li_theme ul li:hover   {
-    background-color: var(--color3);
+    background-color: var(--color4);
     color: var(--font_color);
 }
 

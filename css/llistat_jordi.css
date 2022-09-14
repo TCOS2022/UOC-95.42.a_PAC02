@@ -39,14 +39,14 @@ header ul li.li_theme ul li{
 y se puedan adaptar al tema + utilizo las variables*/
 
 header ul li.li_theme ul li.theme_selected {
-    background-color: var(--color3); 
+    background-color: var(--color4); 
     color:var(--font_color);
     font-size: 125% rem;
     font-weight: bolder;
 }
 
 header ul li.li_theme ul li:hover {
-    background-color: var(--color3);
+    background-color: var(--color4);
     color: var(--font_color);
 }
 
