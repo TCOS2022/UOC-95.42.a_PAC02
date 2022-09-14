@@ -20,6 +20,14 @@ body {
     color: var(--font_color);
 }
 
+/*IMAGEN CABECERA*/
+div.title {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: stretch;
+    justify-content: center;
+    flex-direction: column;
+}
 
 /* AREA DE NAVEGACIO */
 header ul {

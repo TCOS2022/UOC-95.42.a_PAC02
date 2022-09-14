@@ -1,0 +1,10 @@
+Modificacions finals de html (se envía fichero comprimido por wassup para que lo suban a repositorio master)
+    se comenta linea de titulo h1 
+    se añade imagen cabecera tanto en llistat ,como en combat (linea 30 y 32 respectivamente)
+
+Afectacions:
+1) Añadida sección cabecera en ficheros css (llistat y combat). 
+    se pone como flex y centrada para la imagen añadida.  (lineas de la 23 a la 30 y de la 24 a 31 respectivamente).
+
+    
+
