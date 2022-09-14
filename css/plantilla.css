@@ -1,0 +1,82 @@
+/* ****************************************************************** */
+/* BASIC RESET */
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+/* ****************************************************************** */
+/* ASIGNACIO DELS COLORS SEGONS EL TEMA */
+body {
+    background-color: var(--bg_color);
+    color:            var(--font_color);
+}
+
+/* ****************************************************************** */
+/* CONTENIDOR PRINCIPAL */
+div.container{
+    position: relative;
+    width: 85%;
+    margin: auto;
+    margin-top: 20px;
+    padding: 25px;
+    border:3px var(--color1) solid;
+    background-color: var(--color2);
+    border-radius: 20px;
+}
+
+/* ****************************************************************** */
+/* TITOL */
+.title{
+    text-align: center;
+    padding: 10px;
+    width: 80%;
+    border: 5px solid var(--color1);
+    border-radius: 5px;
+    margin: 0 auto 20px auto;
+}
+
+/* ****************************************************************** */
+/* AREA DE NAVEGACIO */
+header ul {
+    list-style: none;
+    display:flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+header ul li {display: inline-block;}
+header ul li.li_nav ul li{margin-right: 20px;}   /*Añadido margin para separar los dos enlaces-09SEP2022-*/
+
+header ul li.li_theme ul li{
+    border:1px var(--font_color) solid;
+    background-color: var(--color3);
+    padding: 5px;
+}
+
+header ul li.li_theme ul li.theme_selected {
+    background-color: var(--color4); 
+    color:var(--font_color);
+    font-size: 1.25 rem !important;
+    font-weight: bolder;
+}
+
+header ul li.li_theme ul li:hover   {
+    background-color: var(--color4);
+    color: var(--font_color);
+}
+
+header ul li.li_theme ul li:first-child{display:none !important}
+header ul li.li_theme ul li:last-child{display:none !important}
+
+a {
+    color: var(--font_color); 
+}
+
+
+/* AREA DE BUSCADOR */
+section.buscador {
+    background-color: var(--color1);
+    color: var(--color2);
+}

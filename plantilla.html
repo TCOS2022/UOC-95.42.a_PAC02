@@ -8,11 +8,13 @@
     <!-- Afegim arxiu de favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="media/imatges/favicons/android-chrome-512x512.png">
     <!-- Afegim arxius de fonts -->
-    <!-- Afegim arxius de CSS -->
+        <!-- Afegim arxius de CSS -->
+        <!-- Per triar els color del thema .... -->
+        <link rel="stylesheet" href="css/general_system.css" id="css_Theme" >
+        <!-- valors generals per tota la web -->
         <link rel="stylesheet" href="css/general.css">
+        <!-- valors especifics per aquesat pagina -->
         <link rel="stylesheet" href="css/plantilla.css">
-    <!-- valors especifics per la card -->
-    <link rel="stylesheet" href="css/card.css">
     <!-- Afegim arxius de JS -->
         <script defer src="js/localStorage_functions.js"></script>
         <script defer src="js/themeSelector_functions.js"></script>
@@ -30,7 +32,7 @@
             </div>
             <nav>
                 <ul>
-                    <li>
+                    <li class="li_nav">
                         <h3>LINKS NAVEGACIO</h3>
                         <ul>
                             <li><a href="plantilla.html">Home</a></li>
@@ -38,12 +40,21 @@
                             <li><a href="combat.html">Combat de Pokemons</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <h3>LINKS THEME</h3>
+                    <li class="li_theme">
+                        <h3>SELECCIO TEMA</h3>
                         <ul>
+                            <!--
+                            <li class="theme_selected">SYSTEM</li>  
+                            -->
                             <li>SYSTEM</li>
-                            <li>DARK MODE</li>
-                            <li>LIGHT MODE</li>
+                            <li>DARK</li>
+                            <li>LIGHT</li>
+                            <li>INFERNO</li>
+                            <!--
+                            <li>HEAVEN</li>
+                            <li>INFERNO</li>
+                            <li>CONTRASTAT</li>
+                            -->
                         </ul>
                     </li>
                 </ul>
